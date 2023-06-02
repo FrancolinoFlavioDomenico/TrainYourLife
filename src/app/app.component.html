@@ -1,21 +1,41 @@
 <div class="header">
   <mat-toolbar color="primary">
-    <button mat-icon-button (click)="onHamburgerMenuClicked()" class="example-icon"
-      aria-label="Example icon-button with menu icon">
-      <mat-icon>{{toggleMenu ? 'close' : 'menu'}}</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
-      (click)="onLogOutClick()">
-      <mat-icon>exit_to_app</mat-icon>
-    </button>
+    <ng-container *ngIf="isLogged">
+
+      <div class="left-side">
+
+        <button mat-icon-button (click)="onHamburgerMenuClicked()" class="example-icon"
+          aria-label="Example icon-button with menu icon">
+          <mat-icon>{{toggleMenu ? 'close' : 'menu'}}</mat-icon>
+        </button>
+
+        <!--  <div class="logo">
+          <img src="assets/media/logo.png">
+        </div> -->
+
+        <span>{{titlePage}}</span>
+
+      </div>
+
+      <div class="right-side">
+        <mat-icon [matBadge]="1" matBadgeColor="warn">notifications</mat-icon>
+        <span class="cdk-visually-hidden">
+
+        </span>
+
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+          (click)="onLogOutClick()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
+
+
+    </ng-container>
+
+    <ng-container *ngIf="!isLogged">
+      <span class="appTitle">Train your life</span>
+    </ng-container>
   </mat-toolbar>
-
-
 </div>
 <div class="body">
   <app-navbar *ngIf="toggleMenu" (navBarItemClick)="onNavbarItemClicked($event)">

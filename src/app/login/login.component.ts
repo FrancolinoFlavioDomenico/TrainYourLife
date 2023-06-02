@@ -1,11 +1,6 @@
+import { UserInfoService } from './../shared/service/user-info.service';
 import { Component, OnInit } from '@angular/core';
-import { SessionStorageService } from 'angular-web-storage';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +13,7 @@ export class LoginComponent implements OnInit {
   public isCoachUser = false;
 
   constructor(
-    private _stroageService: SessionStorageService,
+    private _userInfoService: UserInfoService,
     private _router: Router
   ) {}
 
@@ -30,11 +25,13 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick(): void {
-    this._stroageService.set(
-      'userType',
+    this._userInfoService.setStorageServiceValue(
+      'isCoach',
       this.loginForm.get('mail').value.toString().includes('coach')
-        ? 'coach'
-        : 'client'
+        ? true
+        : false
     );
+
+    this._userInfoService.setStorageServiceValue('isLogged', true);
   }
 }

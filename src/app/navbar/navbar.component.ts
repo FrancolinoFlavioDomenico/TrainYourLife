@@ -9,7 +9,7 @@ import { SessionStorageService } from 'angular-web-storage';
 export class NavbarComponent implements OnInit {
   private _menuItemCoach = [
     'home',
-    'cliente',
+    'clienti',
     'prenotazioni',
     'schede',
     'esercizi',
@@ -25,10 +25,9 @@ export class NavbarComponent implements OnInit {
     'prenotazioni',
   ];
 
-  public menuItem =
-    this._stroageService.get('userType') === 'coach'
-      ? this._menuItemCoach
-      : this._menuItemClient;
+  public menuItem = this._stroageService.get('isCoach')
+    ? this._menuItemCoach
+    : this._menuItemClient;
 
   @Output() navBarItemClick: EventEmitter<string> = new EventEmitter<string>();
 

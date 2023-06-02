@@ -15,11 +15,37 @@
 
 .mat-toolbar {
   padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  justify-content: space-between;
   * {
     color: white !important;
+  }
+
+  .logo {
+    height: 100%;
+    width: auto;
   }
 }
 
 app-navbar {
   z-index: 999999999999999999999999999999999999999999999999999999;
+}
+
+.appTitle {
+  margin-left: var(--margin-large);
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  gap: var(--padding-large);
+  align-items: center;
+  .mat-badge-content {
+    color: white;
+  }
 }

@@ -1,6 +1,6 @@
 <div class="logon-container padding-extra-large">
   <div class="logo">
-
+    <img src="assets/media/logo.png">
   </div>
   <div class="form-container">
     <form [formGroup]="logonForm">
@@ -24,6 +24,12 @@
         <input matInput type="password" required formControlName="psw">
         <mat-error *ngIf="logonForm.get('psw').invalid">Questo campo non puo essere vuoto</mat-error>
       </mat-form-field>
+      <div class="button-container padding-large client-or-coach-button-container">
+        <button mat-raised-button [ngClass]="{'not-selected-button': isCoachUser}"
+          (click)="onSelectUserType('client')">Cliente</button> o
+        <button mat-raised-button [ngClass]="{'not-selected-button': !isCoachUser}"
+          (click)="onSelectUserType('coach')">Coach</button>
+      </div>
     </form>
   </div>
   <div class="button-container padding-large">

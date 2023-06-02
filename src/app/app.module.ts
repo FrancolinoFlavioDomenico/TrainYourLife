@@ -15,6 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { BaseComponentComponent } from './shared/base-component/base-component.component';
 import { ConfimModalComponent } from './shared/confim-modal/confim-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserInfoService } from './shared/service/user-info.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [SessionStorageService],
+  providers: [SessionStorageService, UserInfoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
