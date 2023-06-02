@@ -1,0 +1,25 @@
+@import ".././assets/scss/palette";
+@import ".././assets/scss/layout";
+
+.body {
+  display: flex;
+  height: calc(100% - 56px);
+  overflow: auto;
+  width: 100%;
+
+  .body-content {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.mat-toolbar {
+  padding-left: 0px !important;
+  * {
+    color: white !important;
+  }
+}
+
+app-navbar {
+  z-index: 999999999999999999999999999999999999999999999999999999;
+}

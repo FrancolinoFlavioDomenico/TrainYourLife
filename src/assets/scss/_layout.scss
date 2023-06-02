@@ -1,0 +1,12 @@
+:root{
+  --padding-large: 16px;
+  --padding-extra-large: 25px;
+}
+
+.padding-large {
+  padding: var(--padding-large) var(--padding-large);
+}
+.padding-extra-large {
+  padding: var(--padding-extra-large) var(--padding-extra-large);
+}
+

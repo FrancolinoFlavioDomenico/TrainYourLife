@@ -1,0 +1,20 @@
+@import "../../assets/scss/_palette.scss";
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: fit-content;
+  gap: 16px;
+  padding: 16px;
+  position: absolute;
+  border-right: 1px solid black;
+  background-color: var(--secondary-color);
+
+  a {
+    text-decoration: none;
+    color: white;
+    white-space: break-spaces;
+    text-transform: capitalize;
+  }
+}

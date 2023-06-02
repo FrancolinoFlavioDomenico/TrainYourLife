@@ -1,0 +1,12 @@
+@import "../../assets/scss/layout";
+@import "../../assets/scss/palette";
+
+.mdc-button:not(:disabled) {
+  border-radius: 50px !important;
+  border-color: var(--primary-color) !important;
+}
+
+.mdc-button:disabled {
+  border-radius: 50px !important;
+  background-color: var(--button-bg-color-disabled) !important;
+}

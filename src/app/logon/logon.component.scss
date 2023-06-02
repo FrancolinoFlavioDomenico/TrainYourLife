@@ -1,0 +1,33 @@
+@import "../../assets/scss/layout";
+@import "../../assets/scss/palette";
+
+.logon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+
+  .logo {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 25px;
+    align-self: center;
+  }
+
+  .form-container,
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}

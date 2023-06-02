@@ -1,0 +1,33 @@
+<div class="logon-container padding-extra-large">
+  <div class="logo">
+
+  </div>
+  <div class="form-container">
+    <form [formGroup]="logonForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput required formControlName="name">
+        <mat-error *ngIf="logonForm.get('name').invalid">Questo campo non puo essere vuoto</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cognome</mat-label>
+        <input matInput required formControlName="surname">
+        <mat-error *ngIf="logonForm.get('surname').invalid">Questo campo non puo essere vuoto</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput required formControlName="mail">
+        <mat-error *ngIf="logonForm.get('mail').invalid">Campo vuoto o incorretto</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" required formControlName="psw">
+        <mat-error *ngIf="logonForm.get('psw').invalid">Questo campo non puo essere vuoto</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="button-container padding-large">
+    <button mat-raised-button color="primary" [routerLink]="['/home']" [disabled]="logonForm.invalid">Concludi
+      Registrazione</button>
+  </div>
+</div>
