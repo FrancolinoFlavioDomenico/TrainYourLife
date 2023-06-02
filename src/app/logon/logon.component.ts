@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserInfoService } from '../shared/service/user-info.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfimModalComponent } from '../shared/component/confim-modal/confim-modal.component';
 
 @Component({
   selector: 'app-logon',
@@ -14,7 +16,8 @@ export class LogonComponent implements OnInit {
 
   constructor(
     private _userInfoService: UserInfoService,
-    private _router: Router
+    private _router: Router,
+    private _modalServie: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +34,25 @@ export class LogonComponent implements OnInit {
       'isCoach',
       userType === 'coach'
     );
+  }
+  public onFinishClick(): void {
+    this._modalServie
+      .open(ConfimModalComponent, {
+        width: '300px',
+        height: '50px',
+        data: {
+          msgBody: 'Registrazione avvenuta con successo',
+          isSuccessfulModal: true,
+        },
+      })
+      .afterClosed()
+      .subscribe(() => {
+        this._userInfoService.setStorageServiceValue(
+          'isCoach',
+          this.isCoachUser
+        );
+
+        this._userInfoService.setStorageServiceValue('isLogged', true);
+      });
   }
 }

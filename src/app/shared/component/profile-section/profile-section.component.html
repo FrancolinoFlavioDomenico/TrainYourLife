@@ -1,0 +1,29 @@
+<div class="profile-section">
+  <div class="cover"></div>
+
+  <div class="data row padding-large">
+    <div class="photo-and-name">
+      <div class="photo">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+          alt="">
+      </div>
+      <span class="row">Marco Rossi</span>
+    </div>
+
+    <div class="userinfo column">
+      <div>Email: marco.rossi@gmail.com</div>
+      <div>Tipo utente: {{isCoach ? "Coach" : "Cliente"}}</div>
+      <div class="row"><span>Sesso: M</span> <span>Età: 25</span></div>
+      <div class="row">
+        <button mat-icon-button>
+          <mat-icon>phone</mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="['/chat']">
+          <mat-icon>message</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breakline"></div>

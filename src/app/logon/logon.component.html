@@ -33,7 +33,8 @@
     </form>
   </div>
   <div class="button-container padding-large">
-    <button mat-raised-button color="primary" [routerLink]="['/home']" [disabled]="logonForm.invalid">Concludi
+    <button mat-raised-button color="primary" [routerLink]="['/home']" [disabled]="logonForm.invalid"
+      (click)="onFinishClick()">Concludi
       Registrazione</button>
   </div>
 </div>

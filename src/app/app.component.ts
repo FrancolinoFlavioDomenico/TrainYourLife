@@ -1,9 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NavigationEnd, NavigationStart, Route, Router } from '@angular/router';
-import { SessionStorageService } from 'angular-web-storage';
-import { ConfimModalComponent } from './shared/confim-modal/confim-modal.component';
+import { NavigationEnd, Router } from '@angular/router';
+import { ConfimModalComponent } from './shared/component/confim-modal/confim-modal.component';
 import { UserInfoService } from './shared/service/user-info.service';
 import { filter } from 'rxjs';
 
@@ -64,12 +63,17 @@ export class AppComponent implements OnInit {
       .open(ConfimModalComponent, {
         height: '20%',
         width: '60%',
+        data: {
+          msgBody: 'Sicuro di voler uscire',
+          isSuccessfulModal: false,
+        },
       })
       .afterClosed()
       .subscribe({
         next: (res) => {
           res ? this._router.navigate([`/login`]) : null;
           this._userInfoService.setStorageServiceValue('isLogged', false);
+          this.toggleMenu = false;
         },
       });
   }

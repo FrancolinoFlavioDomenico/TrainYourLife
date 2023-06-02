@@ -27,7 +27,9 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/media/homeCardPicture",
+              "src/assets/media"
             ],
             "styles": [
               "src/theme.scss",
@@ -95,6 +97,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/media/homeCardPicture",
               "src/assets/media"
             ],
             "styles": [

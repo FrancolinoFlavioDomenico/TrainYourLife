@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="home-container column">
+
+  <app-profile-section></app-profile-section>
+
+  <div class="pages-section">
+    <ng-container *ngFor="let item of menuItem">
+      <div class="card" [routerLink]="[item]" [ngStyle]="setCardCover(item)">
+        <span class="title-card-cover">
+        </span>
+        <span class="title-card">{{item}}</span>
+      </div>
+    </ng-container>
+  </div>
+
+</div>

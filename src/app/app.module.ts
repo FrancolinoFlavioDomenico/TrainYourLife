@@ -12,10 +12,11 @@ import { LogonComponent } from './logon/logon.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SessionStorageService } from 'angular-web-storage';
 import { MaterialModule } from './material/material.module';
-import { BaseComponentComponent } from './shared/base-component/base-component.component';
-import { ConfimModalComponent } from './shared/confim-modal/confim-modal.component';
+import { ConfimModalComponent } from './shared/component/confim-modal/confim-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoService } from './shared/service/user-info.service';
+import { ProfileSectionComponent } from './shared/component/profile-section/profile-section.component';
+import { ChatComponent } from './shared/component/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { UserInfoService } from './shared/service/user-info.service';
     LoginComponent,
     LogonComponent,
     NavbarComponent,
-    BaseComponentComponent,
     ConfimModalComponent,
+    ProfileSectionComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

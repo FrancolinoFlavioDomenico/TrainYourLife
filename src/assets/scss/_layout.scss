@@ -1,8 +1,11 @@
 :root {
+  --padding-small: 5px;
   --padding-large: 16px;
   --padding-extra-large: 25px;
 
-  --margin-large: 16px;
+
+  --margin-small: 5px
+  --margin-large: 15px;
   --margin-extra-large: 25px;
 }
 
@@ -11,4 +14,13 @@
 }
 .padding-extra-large {
   padding: var(--padding-extra-large) var(--padding-extra-large);
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

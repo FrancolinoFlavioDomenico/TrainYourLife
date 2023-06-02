@@ -1,0 +1,37 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: var(--padding-large);
+  height: 100%;
+
+  .pages-section {
+    height: calc(100% - 20% - (var(--padding-large) * 2));
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--padding-large);
+    padding: var(--padding-large);
+
+    .card {
+      border: 1px solid black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .title-card-cover {
+        background-color: black;
+        opacity: 0.2;
+        width: 100%;
+        height: 20%;
+      }
+
+      .title-card {
+        color: white;
+        position: absolute;
+        padding: calc(1em / 2) 0px;
+      }
+    }
+  }
+}

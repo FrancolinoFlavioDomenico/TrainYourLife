@@ -1,5 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SessionStorageService } from 'angular-web-storage';
+import {
+  menuItemClient,
+  menuItemCoach,
+} from '../shared/constants/navbar-item.enum';
+import { UserInfoService } from '../shared/service/user-info.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,31 +12,13 @@ import { SessionStorageService } from 'angular-web-storage';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  private _menuItemCoach = [
-    'home',
-    'clienti',
-    'prenotazioni',
-    'schede',
-    'esercizi',
-    'nuove iscrizioni',
-  ];
-
-  private _menuItemClient = [
-    'home',
-    'coach',
-    'abbonamenti',
-    'allenamenti',
-    'obbietivi',
-    'prenotazioni',
-  ];
-
-  public menuItem = this._stroageService.get('isCoach')
-    ? this._menuItemCoach
-    : this._menuItemClient;
+  public menuItem = this._userInfoService.getIsCoach()
+    ? menuItemCoach
+    : menuItemClient;
 
   @Output() navBarItemClick: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private _stroageService: SessionStorageService) {}
+  constructor(private _userInfoService: UserInfoService) {}
 
   ngOnInit(): void {}
 

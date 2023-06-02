@@ -1,13 +1,13 @@
-<div class="modal-container">
-  <div class="modal-header">
+<div class="modal-container" [ngClass]="{'modal-container-green': dataFromParent?.isSuccessfulModal}">
+  <div class="modal-header" *ngIf="!dataFromParent?.isSuccessfulModal">
     <mat-toolbar color="primary">
       <span>Conferma operazione</span>
     </mat-toolbar>
   </div>
   <div class="modal-body padding-large">
-    Sicuro di vole uscire?
+    {{dataFromParent?.msgBody}}
   </div>
-  <div class="modal-footer padding-large">
+  <div class="modal-footer padding-large" *ngIf="!dataFromParent?.isSuccessfulModal">
     <button mat-raised-button color="primary" (click)="onCancel()">Annulla</button>
     <button mat-stroked-button color="primary" (click)="onConfirm()">Conferma</button>
   </div>
