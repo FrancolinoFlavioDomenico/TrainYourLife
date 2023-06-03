@@ -1,0 +1,30 @@
+<div class="people-list-container padding-large">
+  <span class="title-page">{{page.title}}</span>
+
+  <ng-container *ngFor="let item of page.list">
+    <mat-card class="card-box-shadow">
+      <mat-card-content>
+        <div class="row">
+          <div class="column">
+            <span class="header">
+              {{item.title}}
+            </span>
+            <span>
+              {{item.subTitle}}
+            </span>
+          </div>
+
+          <ng-container *ngIf="item.isWhitCheckBox; else detailIcon">
+            <mat-checkbox></mat-checkbox>
+          </ng-container>
+
+          <ng-template #detailIcon>
+            <button mat-icon-button>
+              <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+          </ng-template>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

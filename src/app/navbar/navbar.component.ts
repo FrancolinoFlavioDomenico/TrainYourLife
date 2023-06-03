@@ -1,9 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SessionStorageService } from 'angular-web-storage';
-import {
-  menuItemClient,
-  menuItemCoach,
-} from '../shared/constants/navbar-item.enum';
+import { menuItemClient, menuItemCoach } from '../shared/constant/navbar-item';
 import { UserInfoService } from '../shared/service/user-info.service';
 
 @Component({
@@ -22,7 +19,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onItemClick(clckedItem) {
+  onItemClick(clckedItem: string) {
     this.navBarItemClick.emit(clckedItem);
   }
 }

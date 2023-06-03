@@ -17,7 +17,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoService } from './shared/service/user-info.service';
 import { ProfileSectionComponent } from './shared/component/profile-section/profile-section.component';
 import { ChatComponent } from './shared/component/chat/chat.component';
-import { PeopleListComponent } from './shared/component/people-list/people-list.component';
+import { ListComponent } from './shared/component/list/list.component';
+import { ListService } from './shared/service/list.service';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { GoalsComponent } from './goals/goals.component';
+import { WorkoutComponent } from './workout/workout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { PeopleListComponent } from './shared/component/people-list/people-list.
     ConfimModalComponent,
     ProfileSectionComponent,
     ChatComponent,
-    PeopleListComponent,
+    ListComponent,
+    ReservationsComponent,
+    GoalsComponent,
+    WorkoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,7 @@ import { PeopleListComponent } from './shared/component/people-list/people-list.
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [SessionStorageService, UserInfoService],
+  providers: [SessionStorageService, UserInfoService, ListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
