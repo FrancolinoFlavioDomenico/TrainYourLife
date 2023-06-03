@@ -4,7 +4,7 @@
 
   <div class="pages-section">
     <ng-container *ngFor="let item of menuItem">
-      <div class="card" [routerLink]="[item]" [ngStyle]="setCardCover(item)">
+      <div class="card" (click)="onCardClick(item)" [ngStyle]="setCardCover(item)">
         <span class="title-card-cover">
         </span>
         <span class="title-card">{{item}}</span>

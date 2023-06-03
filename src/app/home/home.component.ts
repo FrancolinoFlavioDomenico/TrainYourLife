@@ -4,6 +4,7 @@ import {
   menuItemCoach,
   menuItemClient,
 } from '../shared/constants/navbar-item.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,10 @@ export class HomeComponent implements OnInit {
     ? menuItemCoach
     : menuItemClient;
 
-  constructor(private _userInfoService: UserInfoService) {}
+  constructor(
+    private _userInfoService: UserInfoService,
+    private _router: Router
+  ) {}
 
   public ngOnInit(): void {
     const homeItemIndex = this.menuItem.indexOf('home');
@@ -32,5 +36,9 @@ export class HomeComponent implements OnInit {
       'background-size': 'cover',
       'background-position': 'center center',
     };
+  }
+
+  public onCardClick(card: string): void {
+    this._router.navigate(['/' + card]);
   }
 }

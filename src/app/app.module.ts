@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoService } from './shared/service/user-info.service';
 import { ProfileSectionComponent } from './shared/component/profile-section/profile-section.component';
 import { ChatComponent } from './shared/component/chat/chat.component';
+import { PeopleListComponent } from './shared/component/people-list/people-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ChatComponent } from './shared/component/chat/chat.component';
     ConfimModalComponent,
     ProfileSectionComponent,
     ChatComponent,
+    PeopleListComponent,
   ],
   imports: [
     BrowserModule,

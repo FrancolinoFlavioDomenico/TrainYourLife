@@ -1,0 +1,24 @@
+<div class="people-list-container padding-large">
+  <ng-container *ngFor="let item of peopleList">
+    <mat-card class="card-box-shadow">
+      <mat-card-content>
+        <div class="row">
+          <div class="column">
+            <span class="header">
+              {{item.name}} {{item.surname}}
+            </span>
+            <span>
+              {{!isCoach ? "Corsi offerti:" : ''}}
+              <ng-container *ngFor="let i of getOfferedList(item.id)">
+                {{i}}
+              </ng-container>
+            </span>
+          </div>
+          <button mat-icon-button>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
