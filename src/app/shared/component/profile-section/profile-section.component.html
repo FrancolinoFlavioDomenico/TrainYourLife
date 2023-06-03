@@ -8,14 +8,14 @@
           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
           alt="">
       </div>
-      <span class="row">Marco Rossi</span>
+      <span class="row">{{user.name}} {{user.surname}}</span>
     </div>
 
     <div class="userinfo column">
-      <div>Email: marco.rossi@gmail.com</div>
-      <div>Tipo utente: {{isCoach ? "Coach" : "Cliente"}}</div>
-      <div class="row"><span>Sesso: M</span> <span>Età: 25</span></div>
-      <div class="row">
+      <div>Email: {{user.mail}}</div>
+      <div *ngIf="isHomePage">Tipo utente: {{isCoach ? "Coach" : "Cliente"}}</div>
+      <div class="row"><span>Sesso: {{user.sex}}</span> <span>Età: {{user.age}}</span></div>
+      <div class="row" *ngIf="!isHomePage">
         <button mat-icon-button>
           <mat-icon>phone</mat-icon>
         </button>

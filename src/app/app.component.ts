@@ -9,6 +9,7 @@ import { clientList, coachList } from './shared/constant/peopleList';
 import { cards, course, exercises } from './shared/constant/stringList';
 import { ListPageModel } from './shared/model/list.model';
 import { ListService } from './shared/service/list.service';
+import { mapListPageFromHome } from './shared/function/globalFunction';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,6 @@ export class AppComponent implements OnInit {
   title = 'trainYourLife';
 
   public toggleMenu = false;
-  public valueEmittedFromChildComponent: string;
 
   public isLogged: boolean;
 
@@ -69,136 +69,12 @@ export class AppComponent implements OnInit {
   }
 
   public onNavbarItemClicked(valueEmitted: string) {
-    this.valueEmittedFromChildComponent = valueEmitted;
+    this._listService.setPage(mapListPageFromHome(valueEmitted));
     valueEmitted = valueEmitted.replaceAll(' ', '_');
-    this._mapPage();
     if (valueEmitted === 'prenotazioni' && this._userInfoService.getIsCoach())
       this._router.navigate(['/' + valueEmitted + '/coach']);
     else this._router.navigate(['/' + valueEmitted]);
     this.toggleMenu = !this.toggleMenu;
-  }
-
-  private _mapPage(): void {
-    let pageToSet: ListPageModel;
-
-    switch (this.valueEmittedFromChildComponent) {
-      case 'clienti':
-        pageToSet = {
-          title: 'Seleziona cliente',
-          list: clientList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'client',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'coach':
-        pageToSet = {
-          title: 'Seleziona coach',
-          list: coachList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'coach',
-              isWhitCheckBox: false,
-              subTitle: `Corsi offerti: ${item.offeredCourse}`,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'abbonamenti':
-        pageToSet = {
-          title: 'Seleziona abbonamento:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'prenotazioni:':
-        pageToSet = {
-          title: 'Prenota per:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'abbonamenti':
-        pageToSet = {
-          title: 'Seleziona abbonamento:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'schede':
-        pageToSet = {
-          title: 'Seleziona scheda:',
-          list: cards.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'valueEmitteds',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'esercizi':
-        pageToSet = {
-          title: 'Seleziona esericizio:',
-          list: exercises.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'exercises',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'nuove iscrizioni':
-        pageToSet = {
-          title: 'Seleziona cliente:',
-          list: clientList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'client',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-
-      default:
-        break;
-    }
   }
 
   public onLogOutClick(): void {

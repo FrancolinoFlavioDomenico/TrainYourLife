@@ -6,6 +6,7 @@ import { ListService } from '../shared/service/list.service';
 import { ListPageModel } from '../shared/model/list.model';
 import { clientList, coachList } from '../shared/constant/peopleList';
 import { cards, course, exercises } from '../shared/constant/stringList';
+import { mapListPageFromHome } from '../shared/function/globalFunction';
 
 @Component({
   selector: 'app-home',
@@ -47,133 +48,10 @@ export class HomeComponent implements OnInit {
 
   public onCardClick(card: string): void {
     this.clickedCard = card;
-    this._mapPage();
+    this._listService.setPage(mapListPageFromHome(card));
     card = card.replaceAll(' ', '_');
     if (card === 'prenotazioni' && this.isCoach)
       this._router.navigate(['/' + card + '/coach']);
     else this._router.navigate(['/' + card]);
-  }
-
-  private _mapPage(): void {
-    let pageToSet: ListPageModel;
-
-    switch (this.clickedCard) {
-      case 'clienti':
-        pageToSet = {
-          title: 'Seleziona cliente',
-          list: clientList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'client',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'coach':
-        pageToSet = {
-          title: 'Seleziona cliente',
-          list: coachList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'coach',
-              isWhitCheckBox: false,
-              subTitle: `Corsi offerti: ${item.offeredCourse}`,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'abbonamenti':
-        pageToSet = {
-          title: 'Seleziona abbonamento:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'prenotazioni':
-        pageToSet = {
-          title: 'Prenota per:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'abbonamenti':
-        pageToSet = {
-          title: 'Seleziona abbonamento:',
-          list: course.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'course',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'schede':
-        pageToSet = {
-          title: 'Seleziona scheda:',
-          list: cards.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'cards',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'esercizi':
-        pageToSet = {
-          title: 'Seleziona esercizio:',
-          list: exercises.map((item) => {
-            return {
-              title: item,
-              itemId: item,
-              fromList: 'exercises',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-      case 'nuove iscrizioni':
-        pageToSet = {
-          title: 'Seleziona cliente:',
-          list: clientList.map((item) => {
-            return {
-              title: `${item.name} ${item.surname}`,
-              itemId: item.id,
-              fromList: 'client',
-              isWhitCheckBox: false,
-            };
-          }),
-        };
-        this._listService.setPage(pageToSet);
-        break;
-
-      default:
-        break;
-    }
   }
 }

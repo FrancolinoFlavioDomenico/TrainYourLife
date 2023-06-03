@@ -6,4 +6,7 @@ export interface CoachModel {
   bio?: string;
   studyTitle?: string[];
   offeredCourse?: string[];
+  mail?: string;
+  psw?: string;
+  sex?: string;
 }

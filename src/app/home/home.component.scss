@@ -1,13 +1,11 @@
 .home-container {
-  display: flex;
-  flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
   gap: var(--padding-large);
   height: 100%;
 
   .pages-section {
-    height: calc(100% - 20% - (var(--padding-large) * 2));
+    height: calc(100% - 20% - var(--padding-large));
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);

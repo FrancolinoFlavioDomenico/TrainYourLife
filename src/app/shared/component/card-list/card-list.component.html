@@ -1,8 +1,8 @@
 <div class="people-list-container padding-large">
-  <span class="title-page">{{page.title}}</span>
+  <span class="title-page" *ngIf="!!page.title">{{page.title}}</span>
 
   <ng-container *ngFor="let item of page.list">
-    <mat-card class="card-box-shadow">
+    <mat-card class="card-box-shadow" (click)="onItemClick(item)">
       <mat-card-content>
         <div class="row">
           <div class="column">

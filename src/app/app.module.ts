@@ -9,19 +9,22 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogonComponent } from './logon/logon.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { SessionStorageService } from 'angular-web-storage';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './shared/material/material.module';
 import { ConfimModalComponent } from './shared/component/confim-modal/confim-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoService } from './shared/service/user-info.service';
 import { ProfileSectionComponent } from './shared/component/profile-section/profile-section.component';
-import { ChatComponent } from './shared/component/chat/chat.component';
-import { ListComponent } from './shared/component/list/list.component';
+import { ChatComponent } from './chat/chat.component';
+import { CardListComponent } from './shared/component/card-list/card-list.component';
 import { ListService } from './shared/service/list.service';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { GoalsComponent } from './goals/goals.component';
-import { WorkoutComponent } from './workout/workout.component';
+import { WorkoutComponent } from './workout-list/workout/workout.component';
+import { UserDetailComponent } from './shared/component/user-detail/user-detail.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { WorkoutListComponent } from './workout-list/workout-list.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +36,13 @@ import { WorkoutComponent } from './workout/workout.component';
     ConfimModalComponent,
     ProfileSectionComponent,
     ChatComponent,
-    ListComponent,
+    CardListComponent,
     ReservationsComponent,
     GoalsComponent,
     WorkoutComponent,
+    UserDetailComponent,
+    SubscriptionComponent,
+    WorkoutListComponent,
   ],
   imports: [
     BrowserModule,

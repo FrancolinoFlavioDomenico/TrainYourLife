@@ -10,6 +10,9 @@ export const coachList: CoachModel[] = [
     bio: 'Lorem',
     studyTitle: ['Laurea'],
     offeredCourse: ['body building'],
+    mail: 'Mario.Rossi @mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 1,
@@ -19,6 +22,9 @@ export const coachList: CoachModel[] = [
     bio: 'da 20 anni insegna con passione e dedizione',
     studyTitle: ['Laurea'],
     offeredCourse: ['body building', 'funzionale'],
+    mail: 'Rita.Verdi @mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 2,
@@ -28,6 +34,9 @@ export const coachList: CoachModel[] = [
     bio: 'Lorem',
     studyTitle: ['Laurea'],
     offeredCourse: ['kick boxing', 'funzionale'],
+    mail: 'Marco.Rossi @mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 3,
@@ -37,6 +46,9 @@ export const coachList: CoachModel[] = [
     bio: 'Lorem',
     studyTitle: ['Laurea'],
     offeredCourse: ['body building'],
+    mail: 'Tommaso.Giallo @mail.com',
+    psw: '123',
+    sex: 'M',
   },
 ];
 
@@ -47,6 +59,9 @@ export const clientList: ClientModel[] = [
     surname: 'Rossi',
     age: 35,
     bio: 'Lorem',
+    mail: 'Mario.Rossi@mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 1,
@@ -54,6 +69,9 @@ export const clientList: ClientModel[] = [
     surname: 'Verdi',
     age: 35,
     bio: 'da 20 anni insegna con passione e dedizione',
+    mail: 'Rita.Verdi@mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 2,
@@ -61,6 +79,9 @@ export const clientList: ClientModel[] = [
     surname: 'Rossi',
     age: 35,
     bio: 'Lorem',
+    mail: 'Marco.Rossi@mail.com',
+    psw: '123',
+    sex: 'M',
   },
   {
     id: 3,
@@ -68,5 +89,8 @@ export const clientList: ClientModel[] = [
     surname: 'Giallo',
     age: 35,
     bio: 'Lorem',
+    mail: 'Tommaso.Giallo@mail.com',
+    psw: '123',
+    sex: 'M',
   },
 ];

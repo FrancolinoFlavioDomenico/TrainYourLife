@@ -9,4 +9,5 @@ export interface ListItemModel {
   itemId: number | string;
   fromList: string;
   isWhitCheckBox: boolean;
+  urlToRedirect: string | number;
 }

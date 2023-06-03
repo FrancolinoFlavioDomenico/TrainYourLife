@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SessionStorageService } from 'angular-web-storage';
-import { menuItemClient, menuItemCoach } from '../shared/constant/navbar-item';
-import { UserInfoService } from '../shared/service/user-info.service';
+import { menuItemClient, menuItemCoach } from '../../constant/navbar-item';
+import { UserInfoService } from '../../service/user-info.service';
 
 @Component({
   selector: 'app-navbar',

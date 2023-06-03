@@ -4,4 +4,7 @@ export interface ClientModel {
   surname?: string;
   age?: number;
   bio?: string;
+  mail?: string;
+  psw?: string;
+  sex?: string;
 }
