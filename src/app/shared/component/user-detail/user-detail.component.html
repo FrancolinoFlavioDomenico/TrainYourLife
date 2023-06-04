@@ -1,3 +1,47 @@
-<div class="user-datail-container">
+<div class="user-datail-container column">
   <app-profile-section [isHomePage]="false" [user]="user"></app-profile-section>
+
+  <div class="first-section padding-extra-large">
+    <span>Bio:</span>
+    <div>{{user.bio}}</div>
+  </div>
+
+  <div class="breakline"></div>
+
+  <span *ngIf="!isCoach" class="offered-course">Corsi offerti:</span>
+
+  <div class="second-section padding-extra-large">
+    <ng-container *ngIf="isCoach; else offeredCourse">
+      <div class="card" [ngStyle]="setCardCover('obiettivi')" routerLink="/obiettivi">
+        <span class="title-card-cover">
+        </span>
+        <span class="title-card">obiettivi</span>
+      </div>
+      <div class="card" [ngStyle]="setCardCover('abbonamenti')" routerLink="/abbonamenti">
+        <span class="title-card-cover">
+        </span>
+        <span class="title-card">abbonamenti</span>
+      </div>
+      <div class="card" (click)="onCardClick('schede')" [ngStyle]="setCardCover('schede')">
+        <span class="title-card-cover long-text ">
+        </span>
+        <span class="title-card long-title">aggiungi scheda <br> esistente</span>
+      </div>
+      <div class="card" (click)="onCardClick('schede/0')" [ngStyle]="setCardCover('addNewCard')">
+        <span class="title-card-cover long-text ">
+        </span>
+        <span class="title-card long-title">aggiungi nuova <br> scheda</span>
+      </div>
+    </ng-container>
+    <ng-template #offeredCourse>
+      <ng-container *ngFor="let item of getOfferedCourse(user.id)">
+        <div class="card" [ngStyle]="setCardCover(item)">
+          <span class="title-card-cover">
+          </span>
+          <span class="title-card">{{item}}</span>
+        </div>
+      </ng-container>
+    </ng-template>
+  </div>
+
 </div>

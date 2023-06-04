@@ -13,7 +13,6 @@
 
     <div class="userinfo column">
       <div>Email: {{user.mail}}</div>
-      <div *ngIf="isHomePage">Tipo utente: {{isCoach ? "Coach" : "Cliente"}}</div>
       <div class="row"><span>Sesso: {{user.sex}}</span> <span>Età: {{user.age}}</span></div>
       <div class="row" *ngIf="!isHomePage">
         <button mat-icon-button>

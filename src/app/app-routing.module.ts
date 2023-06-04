@@ -90,12 +90,6 @@ const routes: Routes = [
   {
     path: 'schede',
     component: CardListComponent,
-    children: [
-      {
-        path: 'dettaglio',
-        component: CardDetailComponent,
-      },
-    ],
   },
   {
     path: 'schede/:id',
@@ -103,11 +97,6 @@ const routes: Routes = [
   },
   {
     path: 'abbonamenti',
-    component: CardListComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: 'abbonamenti/:id',
     component: SubscriptionComponent,
     pathMatch: 'full',
   },

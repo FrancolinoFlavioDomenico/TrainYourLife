@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ListService } from '../shared/service/list.service';
 import { ListPageModel } from '../shared/model/list.model';
 import { clientList, coachList } from '../shared/constant/peopleList';
-import { cards, course, exercises } from '../shared/constant/stringList';
+import { cards, course, exercises } from '../shared/constant/gymList';
 import { mapListPageFromHome } from '../shared/function/globalFunction';
 
 @Component({
@@ -50,8 +50,6 @@ export class HomeComponent implements OnInit {
     this.clickedCard = card;
     this._listService.setPage(mapListPageFromHome(card));
     card = card.replaceAll(' ', '_');
-    if (card === 'prenotazioni' && this.isCoach)
-      this._router.navigate(['/' + card + '/coach']);
-    else this._router.navigate(['/' + card]);
+    this._router.navigate(['/' + card]);
   }
 }

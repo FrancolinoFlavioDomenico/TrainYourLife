@@ -6,7 +6,7 @@ import { ConfimModalComponent } from './shared/component/confim-modal/confim-mod
 import { UserInfoService } from './shared/service/user-info.service';
 import { filter } from 'rxjs';
 import { clientList, coachList } from './shared/constant/peopleList';
-import { cards, course, exercises } from './shared/constant/stringList';
+import { cards, course, exercises } from './shared/constant/gymList';
 import { ListPageModel } from './shared/model/list.model';
 import { ListService } from './shared/service/list.service';
 import { mapListPageFromHome } from './shared/function/globalFunction';

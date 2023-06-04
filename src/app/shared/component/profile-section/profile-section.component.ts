@@ -13,7 +13,9 @@ import { clientList, coachList } from '../../constant/peopleList';
 export class ProfileSectionComponent implements OnInit {
   public isCoach = this._userInfoService.getIsCoach();
   public id: number;
-  @Input() public user: ClientModel | CoachModel;
+  @Input() public user: ClientModel | CoachModel = this.isCoach
+    ? coachList[0]
+    : clientList[0];
 
   @Input() public isHomePage = true;
 

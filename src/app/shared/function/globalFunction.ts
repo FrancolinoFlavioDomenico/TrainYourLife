@@ -1,5 +1,5 @@
 import { clientList, coachList } from '../constant/peopleList';
-import { course, cards, exercises } from '../constant/stringList';
+import { course, cards, exercises } from '../constant/gymList';
 import { subscriptionList } from '../constant/subscriptionList';
 import { ListPageModel } from '../model/list.model';
 
@@ -39,20 +39,6 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
         }),
       };
       break;
-    case 'abbonamenti':
-      pageToSet = {
-        title: 'Seleziona abbonamento:',
-        list: subscriptionList.map((item) => {
-          return {
-            title: item.name,
-            itemId: item.id,
-            fromList: 'subscription',
-            isWhitCheckBox: false,
-            urlToRedirect: item.id,
-          };
-        }),
-      };
-      break;
     case 'prenotazioni':
       pageToSet = {
         title: 'Prenota per:',
@@ -72,11 +58,11 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
         title: 'Seleziona scheda:',
         list: cards.map((item) => {
           return {
-            title: item,
-            itemId: item,
-            fromList: 'valueEmitteds',
+            title: item.name,
+            itemId: item.id,
+            fromList: 'cards',
             isWhitCheckBox: false,
-            urlToRedirect: 'dettaglio',
+            urlToRedirect: item.id,
           };
         }),
       };
@@ -86,11 +72,11 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
         title: 'Seleziona esericizio:',
         list: exercises.map((item) => {
           return {
-            title: item,
-            itemId: item,
+            title: item.name,
+            itemId: item.id,
             fromList: 'exercises',
             isWhitCheckBox: false,
-            urlToRedirect: 'dettaglio',
+            urlToRedirect: item.id,
           };
         }),
       };
@@ -104,7 +90,27 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
             itemId: item.id,
             fromList: 'client',
             isWhitCheckBox: false,
-            urlToRedirect: 'dettaglio',
+            urlToRedirect: item.id,
+          };
+        }),
+      };
+      break;
+  }
+  return pageToSet;
+}
+
+export function mapListPageFromUserDetail(pageToMap: string): ListPageModel {
+  let pageToSet: ListPageModel;
+  switch (pageToMap) {
+    case 'schede':
+      pageToSet = {
+        title: 'Seleziona scheda:',
+        list: cards.map((item) => {
+          return {
+            title: item.name,
+            itemId: item.id,
+            fromList: 'cards',
+            isWhitCheckBox: true,
           };
         }),
       };
