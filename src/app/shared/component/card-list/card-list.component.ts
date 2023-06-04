@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserInfoService } from '../../service/user-info.service';
 import { ListService } from '../../service/list.service';
 import { ListItemModel } from '../../model/list.model';
 import { ActivatedRoute, Route, Router } from '@angular/router';
