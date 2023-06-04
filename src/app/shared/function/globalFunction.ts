@@ -13,6 +13,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'clienti':
       pageToSet = {
         title: 'Seleziona cliente',
+        showAddButton: false,
+        showConfirmButton: false,
         list: clientList.map((item) => {
           return {
             title: `${item.name} ${item.surname}`,
@@ -27,6 +29,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'coach':
       pageToSet = {
         title: 'Seleziona coach',
+        showAddButton: false,
+        showConfirmButton: false,
         list: coachList.map((item) => {
           return {
             title: `${item.name} ${item.surname}`,
@@ -42,6 +46,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'prenotazioni':
       pageToSet = {
         title: 'Prenota per:',
+        showAddButton: false,
+        showConfirmButton: false,
         list: course.map((item) => {
           return {
             title: item,
@@ -56,6 +62,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'schede':
       pageToSet = {
         title: 'Seleziona scheda:',
+        showAddButton: true,
+        showConfirmButton: false,
         list: cards.map((item) => {
           return {
             title: item.name,
@@ -70,6 +78,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'esercizi':
       pageToSet = {
         title: 'Seleziona esericizio:',
+        showAddButton: true,
+        showConfirmButton: false,
         list: exercises.map((item) => {
           return {
             title: item.name,
@@ -84,6 +94,8 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
     case 'nuove iscrizioni':
       pageToSet = {
         title: 'Seleziona cliente:',
+        showAddButton: false,
+        showConfirmButton: false,
         list: clientList.map((item) => {
           return {
             title: `${item.name} ${item.surname}`,
@@ -105,6 +117,8 @@ export function mapListPageFromUserDetail(pageToMap: string): ListPageModel {
     case 'schede':
       pageToSet = {
         title: 'Seleziona scheda:',
+        showAddButton: false,
+        showConfirmButton: true,
         list: cards.map((item) => {
           return {
             title: item.name,

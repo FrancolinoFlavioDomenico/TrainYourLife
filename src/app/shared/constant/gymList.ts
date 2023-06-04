@@ -9,10 +9,11 @@ export const course = [
 ];
 
 export const exercises: ExerciseModel[] = [
-  { id: 0, name: 'Jumping jack', description: 'string', mediaUrl: 'string' },
-  { id: 1, name: 'Crunch', description: 'string', mediaUrl: 'string' },
-  { id: 2, name: 'Panca piana', description: 'string', mediaUrl: 'string' },
-  { id: 3, name: 'Tapis rulant', description: 'string', mediaUrl: 'string' },
+  { id: 0, name: 'Nuovo esercizio', description: '', mediaUrl: '' },
+  { id: 1, name: 'Jumping jack', description: 'string', mediaUrl: 'string' },
+  { id: 2, name: 'Crunch', description: 'string', mediaUrl: 'string' },
+  { id: 3, name: 'Panca piana', description: 'string', mediaUrl: 'string' },
+  { id: 4, name: 'Tapis rulant', description: 'string', mediaUrl: 'string' },
 ];
 
 export const cards: CardModel[] = [

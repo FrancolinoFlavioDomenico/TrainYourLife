@@ -1,30 +1,45 @@
-<div class="people-list-container padding-large">
+<div class="list-page-container padding-large">
   <span class="title-page" *ngIf="!!page.title">{{page.title}}</span>
 
-  <ng-container *ngFor="let item of page.list">
-    <mat-card class="card-box-shadow" (click)="onItemClick(item)">
-      <mat-card-content>
-        <div class="row">
-          <div class="column">
-            <span class="header">
-              {{item.title}}
-            </span>
-            <span>
-              {{item.subTitle}}
-            </span>
+  <div class="items-container">
+
+    <ng-container *ngFor="let item of page.list">
+      <mat-card class="card-box-shadow" (click)="onItemClick(item)">
+        <mat-card-content>
+          <div class="row">
+            <div class="column">
+              <span class="header">
+                {{item.title}}
+              </span>
+              <span>
+                {{item.subTitle}}
+              </span>
+            </div>
+
+            <ng-container *ngIf="item.isWhitCheckBox; else detailIcon">
+              <mat-checkbox></mat-checkbox>
+            </ng-container>
+
+            <ng-template #detailIcon>
+              <button mat-icon-button>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </button>
+            </ng-template>
           </div>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
 
-          <ng-container *ngIf="item.isWhitCheckBox; else detailIcon">
-            <mat-checkbox></mat-checkbox>
-          </ng-container>
+  </div>
 
-          <ng-template #detailIcon>
-            <button mat-icon-button>
-              <mat-icon>keyboard_arrow_right</mat-icon>
-            </button>
-          </ng-template>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </ng-container>
+  <div class="button-container" *ngIf="page.showAddButton || showConfirmButton()">
+    <button mat-fab color="primary" *ngIf="page.showAddButton" (click)="onAddCLick()">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <button mat-raised-button color="primary" class="confirm-button" *ngIf="showConfirmButton()"
+      (click)="onConfirmClick()">
+      Conferma
+    </button>
+  </div>
 </div>

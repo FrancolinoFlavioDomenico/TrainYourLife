@@ -1,6 +1,8 @@
 export interface ListPageModel {
   title?: string;
   list: ListItemModel[];
+  showAddButton: boolean;
+  showConfirmButton: boolean;
 }
 
 export interface ListItemModel {

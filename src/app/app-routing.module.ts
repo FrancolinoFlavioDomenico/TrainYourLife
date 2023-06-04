@@ -43,6 +43,7 @@ const routes: Routes = [
   {
     path: 'clienti/:id',
     component: UserDetailComponent,
+    pathMatch: 'full',
   },
   {
     path: 'coach',
@@ -52,6 +53,7 @@ const routes: Routes = [
   {
     path: 'coach/:id',
     component: UserDetailComponent,
+    pathMatch: 'full',
   },
   {
     path: 'nuove_iscrizioni',
@@ -61,6 +63,7 @@ const routes: Routes = [
   {
     path: 'nuove_iscrizioni/:id',
     component: UserDetailComponent,
+    pathMatch: 'full',
   },
   {
     path: 'prenotazioni',
@@ -90,10 +93,12 @@ const routes: Routes = [
   {
     path: 'schede',
     component: CardListComponent,
+    pathMatch: 'full',
   },
   {
     path: 'schede/:id',
     component: CardDetailComponent,
+    pathMatch: 'full',
   },
   {
     path: 'abbonamenti',
