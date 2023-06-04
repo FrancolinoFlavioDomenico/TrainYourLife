@@ -36,7 +36,8 @@
               "src/styles.scss",
               "src/assets/scss/_palette.scss",
               "src/assets/scss/_layout.scss",
-              "src/assets/scss/material-override.scss"
+              "src/assets/scss/material-override.scss",
+              "src/assets/scss/modal.scss"
             ],
             "scripts": []
           },

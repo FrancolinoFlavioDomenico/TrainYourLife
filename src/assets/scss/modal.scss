@@ -1,0 +1,41 @@
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .modal-header {
+    position: sticky;
+    top: 0px;
+    .mat-toolbar {
+      padding: 16px !important;
+    }
+    height: fit-content;
+  }
+
+  .modal-body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+
+  .modal-footer {
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 16px;
+    border-top: var(--color-primary);
+  }
+}
+.modal-container-green {
+  background-color: green;
+  color: white;
+}

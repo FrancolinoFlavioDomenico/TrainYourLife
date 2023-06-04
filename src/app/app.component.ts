@@ -90,9 +90,11 @@ export class AppComponent implements OnInit {
       .afterClosed()
       .subscribe({
         next: (res) => {
-          res ? this._router.navigate([`/login`]) : null;
-          this._userInfoService.setStorageServiceValue('isLogged', false);
-          this.toggleMenu = false;
+          if (res) {
+            res ? this._router.navigate([`/login`]) : null;
+            this._userInfoService.setStorageServiceValue('isLogged', false);
+            this.toggleMenu = false;
+          }
         },
       });
   }

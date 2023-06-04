@@ -67,7 +67,7 @@ const routes: Routes = [
   },
   {
     path: 'prenotazioni',
-    component: CardListComponent,
+    component: ReservationsComponent,
     pathMatch: 'full',
   },
   {

@@ -1,0 +1,29 @@
+.add-reservation-modal-container {
+  .mat-mdc-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px 0px !important;
+
+    .row {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header {
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input-field {
+      width: 100% !important;
+    }
+  }
+}

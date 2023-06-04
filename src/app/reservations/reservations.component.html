@@ -1,1 +1,55 @@
-<p>reservations works!</p>
+<div class="reservation-container">
+
+  <div class="page-header padding-large">
+    {{getPageTitle()}}
+  </div>
+
+  <div class="scheduler  padding-large">
+
+    <div class="breakline"></div>
+
+    <div class="scheduler-row">
+      <div class="breakline-vetical"></div>
+
+      <ng-container *ngFor="let i of weekDays">
+        <div class="scheduler-cell scheduler-week-days">{{i}} <br> {{weekDays.indexOf(i) !== 0 ? weekDays.indexOf(i) :
+          '' }}
+        </div>
+        <div class="breakline-vetical"></div>
+      </ng-container>
+    </div>
+
+    <div class="breakline"></div>
+
+    <ng-container *ngFor="let i of hoursList;let rowIndex = index">
+
+      <div class="scheduler-row scheduler-body-row">
+        <div class="breakline-vetical"></div>
+        <div class="scheduler-cell scheduler-hours-day"> {{i}}</div>
+
+        <div class="breakline-vetical"></div>
+
+        <ng-container *ngFor="let i of cell; let columnIndex = index">
+          <div class="scheduler-cell scheduler-cell" (click)="addReservation()">
+            <div class="scheduler-cell-body" (click)="changeReservation(); $event.stopPropagation()"
+              [id]="generateCellId(rowIndex,columnIndex)">
+            </div>
+          </div>
+          <div class="breakline-vetical"></div>
+        </ng-container>
+
+      </div>
+
+      <div class="breakline"></div>
+
+    </ng-container>
+
+  </div>
+
+  <div class="button-container padding-large">
+    <button mat-fab color="primary" matTooltip="Aggiungi prenotazione" (click)="addReservation()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="modal-container add-reservation-modal-container">
+  <div class="modal-header">
+    <mat-toolbar color="primary">
+      <span>{{!!dataFromParent ? "Cambia prenotazione" : "Aggiungi prenotazione"}}</span>
+    </mat-toolbar>
+  </div>
+  <div class="modal-body padding-large">
+
+    <form [formGroup]="reservationForm">
+      <mat-form-field class="input-field">
+        <mat-label>Data di prenotazioni</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="input-field">
+        <mat-label>Orario</mat-label>
+        <input matInput [ngxMatTimepicker]="pickerTime" formControlName="time" />
+        <ngx-mat-timepicker #pickerTime></ngx-mat-timepicker>
+        <mat-icon matSuffix>access_time</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="input-field">
+        <mat-label>Corso</mat-label>
+        <mat-select formControlName="course">
+          <mat-option *ngFor="let item of courseList" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="modal-footer padding-large">
+    <button mat-raised-button color="primary" (click)="onConfirm()"
+      [disabled]="reservationForm.invalid">Conferma</button>
+    <button mat-stroked-button color="primary" (click)="onCancel()">Annulla</button>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { clientList, coachList } from '../constant/peopleList';
 import { course, cards, exercises } from '../constant/gymList';
 import { subscriptionList } from '../constant/subscriptionList';
 import { ListPageModel } from '../model/list.model';
+import { Data } from '@angular/router';
 
 export function getPath(voice: string): string {
   return '/' + voice;
@@ -131,4 +132,11 @@ export function mapListPageFromUserDetail(pageToMap: string): ListPageModel {
       break;
   }
   return pageToSet;
+}
+
+export function getRandomDate(offestDay: number, offesetTime: number): Date {
+  let randomDate = new Date();
+  randomDate.setDate(randomDate.getDate() + offestDay),
+    randomDate.setHours(randomDate.getHours() + offesetTime);
+  return randomDate;
 }

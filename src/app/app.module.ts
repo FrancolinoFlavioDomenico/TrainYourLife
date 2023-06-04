@@ -25,6 +25,9 @@ import { WorkoutComponent } from './workout-list/workout/workout.component';
 import { UserDetailComponent } from './shared/component/user-detail/user-detail.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { WorkoutListComponent } from './workout-list/workout-list.component';
+import { AddReservationModalComponent } from './reservations/add-reservation-modal/add-reservation-modal.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { WorkoutListComponent } from './workout-list/workout-list.component';
     UserDetailComponent,
     SubscriptionComponent,
     WorkoutListComponent,
+    AddReservationModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,8 +56,14 @@ import { WorkoutListComponent } from './workout-list/workout-list.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMatTimepickerModule,
   ],
-  providers: [SessionStorageService, UserInfoService, ListService],
+  providers: [
+    SessionStorageService,
+    UserInfoService,
+    ListService,
+    { provide: MAT_DATE_LOCALE, useValue: 'it-IT' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
