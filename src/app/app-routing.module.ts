@@ -106,7 +106,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'obiettivi',
+    path: 'progressi',
     component: GoalsComponent,
     pathMatch: 'full',
   },

@@ -4,11 +4,13 @@
 
   <div class="pages-section">
     <ng-container *ngFor="let item of menuItemWhitOutHome">
-      <div class="card" (click)="onCardClick(item)" [ngStyle]="setCardCover(item)">
-        <span class="title-card-cover">
-        </span>
-        <span class="title-card">{{item}}</span>
-      </div>
+      <mat-card (click)="onCardClick(item)" class="card-box-shadow" [ngStyle]="setCardCover(item)">
+        <mat-card-header>
+          <mat-card-title>{{item}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        </mat-card-content>
+      </mat-card>
     </ng-container>
   </div>
 

@@ -1,1 +1,28 @@
-<p>goals works!</p>
+<div class="goals-container">
+
+  <span class="title-page padding-large">Obbiettivi raggiunti:</span>
+
+  <div class="item-container">
+
+    <ng-container *ngFor="let item of list">
+      <div class="item" [ngClass]="{'disabled-card': item.percentage < 100}">
+        <mat-card class="card-box-shadow">
+          <mat-card-content class="card-content">
+            <span>{{item.name}}</span>
+            <img [src]="item.urlPic">
+            <div class="progress-bar-container">
+              <div class="progress-bar">
+                <span class="progress-bar-value">{{item.percentage}}%</span>
+                <span class="progress-bar-advancement" [ngStyle]="{'width.%': item.percentage}"></span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="button-container padding-large">
+    <button mat-raised-button color="primary" routerLink="/home">Torna alla home</button>
+  </div>
+</div>

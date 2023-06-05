@@ -12,6 +12,6 @@ export const menuItemClient = [
   'coach',
   'abbonamenti',
   'allenamenti',
-  'obiettivi',
+  'progressi',
   'prenotazioni',
 ];

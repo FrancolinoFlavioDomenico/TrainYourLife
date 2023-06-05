@@ -45,10 +45,6 @@ export class ReservationsComponent implements OnInit, AfterViewInit {
 
   public isCoach = this._userInfo.getIsCoach();
 
-  /*   public clickedCell = {
-    id:
-  } */
-
   constructor(
     private _modalServie: MatDialog,
     private _userInfo: UserInfoService

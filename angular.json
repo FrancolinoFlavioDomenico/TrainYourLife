@@ -29,6 +29,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/media/homeCardPicture",
+              "src/assets/media/progressPicture",
               "src/assets/media"
             ],
             "styles": [
