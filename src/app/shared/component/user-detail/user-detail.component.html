@@ -1,66 +1,74 @@
 <div class="user-datail-container column">
   <app-profile-section [isHomePage]="false" [user]="user"></app-profile-section>
 
-  <div class="first-section padding-large">
-    <span>Bio:</span>
-    <div>{{user.bio}}</div>
-  </div>
+  <div class="sections-container">
+    <div class="section padding-large">
+      <span>Bio:</span>
+      <div class="section-title">{{user.bio}}</div>
+    </div>
 
-  <div class="breakline"></div>
-
-  <span *ngIf="!isCoach" class="offered-course">Corsi offerti:</span>
-
-  <div class="second-section padding-large">
-    <ng-container *ngIf="showSubscribedUserCardSection();">
-
-      <mat-card class="card-box-shadow" [ngStyle]="setCardCover('progressi')" routerLink="/progressi">
-        <mat-card-header>
-          <mat-card-title>progressi</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="card-box-shadow" [ngStyle]="setCardCover('abbonamenti')" routerLink="/abbonamenti">
-        <mat-card-header>
-          <mat-card-title>abbonamenti</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="card-box-shadow" (click)="onCardClick('schede')" [ngStyle]="setCardCover('schede')">
-        <mat-card-header>
-          <mat-card-title>aggiungi scheda <br> esistente</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="card-box-shadow" (click)="onCardClick('schede/0')" [ngStyle]="setCardCover('addNewCard')">
-        <mat-card-header>
-          <mat-card-title>aggiungi nuova <br> scheda</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-      </mat-card>
+    <div class="breakline"></div>
 
 
-    </ng-container>
+
+    <div class="section padding-large">
+      <span>{{isCoach ? "seleziona un attivita:" : "Corsi offerti:"}}</span>
+
+      <div class="section-grid-body">
+
+        <ng-container *ngIf="showSubscribedUserCardSection();">
+
+          <mat-card class="card-box-shadow" [ngStyle]="setCardCover('progressi')" routerLink="/progressi">
+            <mat-card-header>
+              <mat-card-title>progressi</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="card-box-shadow" [ngStyle]="setCardCover('abbonamenti')" routerLink="/abbonamenti">
+            <mat-card-header>
+              <mat-card-title>abbonamenti</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="card-box-shadow" (click)="onCardClick('schede')" [ngStyle]="setCardCover('schede')">
+            <mat-card-header>
+              <mat-card-title>aggiungi scheda <br> esistente</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="card-box-shadow" (click)="onCardClick('schede/0')" [ngStyle]="setCardCover('addNewCard')">
+            <mat-card-header>
+              <mat-card-title>aggiungi nuova <br> scheda</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
 
 
-    <ng-container *ngIf="!isCoach">
-      <ng-container *ngFor="let item of getOfferedCourse(user.id)">
+        </ng-container>
 
-        <mat-card class="card-box-shadow" [ngStyle]="setCardCover(item)">
-          <mat-card-header>
-            <mat-card-title>{{item}}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-          </mat-card-content>
-        </mat-card>
-      </ng-container>
-    </ng-container>
+
+        <ng-container *ngIf="!isCoach">
+          <ng-container *ngFor="let item of getOfferedCourse(user.id)">
+
+            <mat-card class="card-box-shadow" [ngStyle]="setCardCover(item)">
+              <mat-card-header>
+                <mat-card-title>{{item}}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+        </ng-container>
+
+      </div>
+    </div>
   </div>
 
   <div class="button-container padding-large">

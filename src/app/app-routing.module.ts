@@ -120,6 +120,11 @@ const routes: Routes = [
     component: WorkoutComponent,
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    component: LoginComponent,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
