@@ -1,0 +1,41 @@
+<div class="modal-container">
+  <div class="modal-header">
+    <mat-toolbar color="primary">
+      <span>Effettua pagamento</span>
+    </mat-toolbar>
+  </div>
+  <div class="modal-body padding-large paymant-container">
+    <div class="header">Seleziona metodo di pagamento:</div>
+    <div class="payement-methon-buttons button-container">
+      <button mat-raised-button color="primary" [ngClass]="{'not-selected-button': isPaypal}"
+        (click)="setIsPayPal(false)">Carta</button>
+      o
+      <button mat-raised-button color="primary" [ngClass]="{'not-selected-button': !isPaypal}"
+        (click)="setIsPayPal(true)">Paypal</button>
+    </div>
+    <div class="payamant-form-container">
+      <span>Dati di pagamento:</span>
+      <form [formGroup]="paymentForm">
+        <mat-form-field *ngIf="!isPaypal">
+          <mat-label>Numero carta</mat-label>
+          <input matInput required formControlName="cardNumber" type="number">
+          <mat-error *ngIf="paymentForm.get('cardNumber').invalid">Questo campo non puo essere vuoto</mat-error>
+        </mat-form-field>
+        <mat-form-field *ngIf="!isPaypal">
+          <mat-label>CVV</mat-label>
+          <input matInput required formControlName="cvv" type="number">
+          <mat-error *ngIf="paymentForm.get('cvv').invalid">Questo campo non puo essere vuoto</mat-error>
+        </mat-form-field>
+        <mat-form-field *ngIf="isPaypal">
+          <mat-label>Email</mat-label>
+          <input matInput required formControlName="mail">
+          <mat-error *ngIf="paymentForm.get('mail').invalid">Campo vuoto o incorretto</mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer padding-large">
+    <button mat-raised-button color="primary" (click)="onCancel()">Annulla</button>
+    <button mat-stroked-button color="primary" (click)="onConfirm()" [disabled]="paymentForm.invalid">Conferma</button>
+  </div>
+</div>

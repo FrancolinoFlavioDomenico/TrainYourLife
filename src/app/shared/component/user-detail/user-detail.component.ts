@@ -12,6 +12,7 @@ import { ListService } from '../../service/list.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfimModalComponent } from '../confim-modal/confim-modal.component';
 import { retry } from 'rxjs';
+import { PagamentiComponent } from 'src/app/pagamenti/pagamenti.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -59,7 +60,17 @@ export class UserDetailComponent implements OnInit {
     return coachList[coachId].offeredCourse;
   }
 
-  public onSubscribeCLick(): void {}
+  public onSubscribeCLick(): void {
+    this._modalServie.open(PagamentiComponent, {
+      width: '80vw',
+      height: '450px',
+      /*  data: {
+        msgBody: 'Operazione avvenuta con successo',
+        isSuccessfulModal: true,
+      }, */
+    });
+  }
+
   public onAcceptCLick(): void {
     this._modalServie.open(ConfimModalComponent, {
       width: '300px',

@@ -28,6 +28,7 @@ import { WorkoutListComponent } from './workout-list/workout-list.component';
 import { AddReservationModalComponent } from './reservations/add-reservation-modal/add-reservation-modal.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { PagamentiComponent } from './pagamenti/pagamenti.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     SubscriptionComponent,
     WorkoutListComponent,
     AddReservationModalComponent,
+    PagamentiComponent,
   ],
   imports: [
     BrowserModule,

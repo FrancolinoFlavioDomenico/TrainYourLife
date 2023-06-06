@@ -13,6 +13,7 @@ import { UserDetailComponent } from './shared/component/user-detail/user-detail.
 import { AddExercisesComponent } from './add-exercises/add-exercises.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { PagamentiComponent } from './pagamenti/pagamenti.component';
 
 const routes: Routes = [
   {
@@ -118,6 +119,11 @@ const routes: Routes = [
   {
     path: 'allenamenti/work',
     component: WorkoutComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'payment',
+    component: PagamentiComponent,
     pathMatch: 'full',
   },
   {
