@@ -11,9 +11,9 @@ import { WorkoutComponent } from './workout-list/workout/workout.component';
 import { WorkoutListComponent } from './workout-list/workout-list.component';
 import { UserDetailComponent } from './shared/component/user-detail/user-detail.component';
 import { AddExercisesComponent } from './add-exercises/add-exercises.component';
-import { CardDetailComponent } from './card-detail/card-detail.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { PagamentiComponent } from './pagamenti/pagamenti.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 const routes: Routes = [
   {

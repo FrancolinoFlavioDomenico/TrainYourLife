@@ -1,1 +1,37 @@
-<p>card-detail works!</p>
+<div class="card-detail-contet column">
+
+  <div class="header">
+    <app-title-page-bar [titlePage]="titlePage"
+      subTitle="Selezionare gli esercizi da assegnare alla scheda"></app-title-page-bar>
+  </div>
+
+  <div class="body padding-large">
+    <ng-container *ngFor="let i of list">
+      <mat-card class="card-box-shadow">
+        <mat-card-content>
+          <div class="row">
+            <span>{{i.name}}</span>
+            <mat-checkbox [checked]="getCheckValue(i)"></mat-checkbox>
+          </div>
+          <mat-form-field>
+            <mat-label>N^ riprese</mat-label>
+            <input matInput type="number" [value]="getInputValue('roundNumber',i)">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Tempo di riposo (minuti)</mat-label>
+            <input matInput type="number" [value]="getInputValue('sleepTime',i)">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Tempo di lavoro (minuti)</mat-label>
+            <input matInput type="number" [value]="getInputValue('workTime',i)">
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+
+  <div class="footer  padding-large">
+    <button mat-raised-button (click)="onConfirmClick()" color="primary">Conferma</button>
+  </div>
+
+</div>

@@ -1,19 +1,23 @@
 @import "../../../../assets/scss/palette";
 
 .title-page-bar {
-  color: var(--secondary-color) !important;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
   background-color: white;
   padding: 16px;
   padding-bottom: 0px;
   width: 100%;
   box-sizing: border-box;
 
-  & > div {
+  .icon-and-title {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-color) !important;
+    gap: 5px;
+  }
+
+  .sub-title {
+    padding-left: 25px;
   }
 }

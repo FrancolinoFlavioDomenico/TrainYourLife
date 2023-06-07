@@ -95,4 +95,8 @@ export class UserDetailComponent implements OnInit {
   public showSubscribedUserCardSection(): boolean {
     return this.isCoach && !this._router.url.includes('nuove_iscrizioni');
   }
+
+  public hiddenGridSection(): boolean {
+    return this.isCoach && this._router.url.includes('nuove_iscrizioni');
+  }
 }

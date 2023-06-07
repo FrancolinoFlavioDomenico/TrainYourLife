@@ -7,7 +7,7 @@ export interface CardModel {
     workTime: number;
     sleepTime: number;
     roundNumber: number;
-    linkedExercise: ExerciseModel;
+    exercise: ExerciseModel;
     isChecked: boolean;
   }[];
 }

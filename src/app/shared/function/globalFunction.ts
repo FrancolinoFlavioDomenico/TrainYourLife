@@ -65,7 +65,7 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
         title: 'Seleziona scheda:',
         showAddButton: true,
         showConfirmButton: false,
-        list: cards.map((item) => {
+        list: cards.slice(1, cards.length).map((item) => {
           return {
             title: item.name,
             itemId: item.id,
@@ -81,7 +81,7 @@ export function mapListPageFromHome(pageToMap: string): ListPageModel {
         title: 'Seleziona esericizio:',
         showAddButton: true,
         showConfirmButton: false,
-        list: exercises.map((item) => {
+        list: exercises.slice(1, exercises.length).map((item) => {
           return {
             title: item.name,
             itemId: item.id,

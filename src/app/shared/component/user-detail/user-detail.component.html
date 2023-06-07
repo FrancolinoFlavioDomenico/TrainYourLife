@@ -9,7 +9,7 @@
       <mat-card-content class="section-title">{{user.bio}}</mat-card-content>
     </mat-card>
 
-    <mat-card class="card-box-shadow">
+    <mat-card class="card-box-shadow" *ngIf="!hiddenGridSection() ">
       <mat-card-header>
         <mat-card-title>
           {{isCoach ? "seleziona un attivita:" : "Corsi offerti:"}}

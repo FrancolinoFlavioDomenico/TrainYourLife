@@ -1,8 +1,11 @@
 <div class="title-page-bar ">
-  <div>
+  <div class="icon-and-title">
     <mat-icon class="mat-18">keyboard_arrow_left</mat-icon>
     {{titlePage}}
   </div>
 
+  <span class="sub-title">
+    {{!!subTitle? subTitle : ''}}
+  </span>
   <mat-divider></mat-divider>
 </div>

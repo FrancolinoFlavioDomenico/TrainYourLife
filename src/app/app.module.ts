@@ -30,6 +30,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { PagamentiComponent } from './pagamenti/pagamenti.component';
 import { TitlePageBarComponent } from './shared/component/title-page-bar/title-page-bar.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TitlePageBarComponent } from './shared/component/title-page-bar/title-p
     AddReservationModalComponent,
     PagamentiComponent,
     TitlePageBarComponent,
+    CardDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TitlePageBarComponent implements OnInit {
   @Input() titlePage: string;
+  @Input() subTitle: string;
 
   public ngOnInit(): void {}
 }
