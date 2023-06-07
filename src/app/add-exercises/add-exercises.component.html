@@ -1,1 +1,37 @@
-<p>add-exercises works!</p>
+<div class="add-exercise-container column">
+
+  <div class="header">
+    <app-title-page-bar [titlePage]="!!titlePage ? titlePage : 'Nuovo esercizio'"></app-title-page-bar>
+  </div>
+
+  <div class=" body padding-large">
+    <mat-card class="card-box-shadow">
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Nome esercizio</mat-label>
+          <input matInput [value]="!!exercise.name ? exercise.name : null">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Descrizione Testuale</mat-label>
+          <textarea matInput rows="10"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Tempo di riposo (minuti)</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <span class="or-span">o</span>
+        <mat-form-field>
+          <mat-label>Tempo di lavoro (minuti)</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="footer padding-large">
+    <button mat-raised-button (click)="onConfirmClick()" color="primary">Conferma</button>
+  </div>
+
+
+
+</div>

@@ -31,6 +31,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { PagamentiComponent } from './pagamenti/pagamenti.component';
 import { TitlePageBarComponent } from './shared/component/title-page-bar/title-page-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { AddExercisesComponent } from './add-exercises/add-exercises.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
     PagamentiComponent,
     TitlePageBarComponent,
     CardDetailComponent,
+    AddExercisesComponent,
   ],
   imports: [
     BrowserModule,

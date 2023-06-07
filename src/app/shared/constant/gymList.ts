@@ -9,7 +9,7 @@ export const course = [
 ];
 
 export const exercises: ExerciseModel[] = [
-  { id: 0, name: 'Nuovo esercizio', description: '', mediaUrl: '' },
+  { id: 0, name: null, description: null, mediaUrl: null },
   { id: 1, name: 'Jumping jack', description: 'string', mediaUrl: 'string' },
   { id: 2, name: 'Crunch', description: 'string', mediaUrl: 'string' },
   { id: 3, name: 'Panca piana', description: 'string', mediaUrl: 'string' },
@@ -19,40 +19,40 @@ export const exercises: ExerciseModel[] = [
 export const cards: CardModel[] = [
   {
     id: 0,
-    name: 'Nuova scheda',
+    name: null,
     linkedExercises: [
       {
-        workTime: 2,
-        sleepTime: 0.5,
-        roundNumber: 2,
+        workTime: null,
+        sleepTime: null,
+        roundNumber: null,
         exercise: exercises[0],
         isChecked: false,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
-        roundNumber: 2,
+        workTime: null,
+        sleepTime: null,
+        roundNumber: null,
         exercise: exercises[1],
         isChecked: false,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
-        roundNumber: 2,
+        workTime: null,
+        sleepTime: null,
+        roundNumber: null,
         exercise: exercises[2],
         isChecked: false,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
-        roundNumber: 2,
+        workTime: null,
+        sleepTime: null,
+        roundNumber: null,
         exercise: exercises[3],
         isChecked: false,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
-        roundNumber: 2,
+        workTime: null,
+        sleepTime: null,
+        roundNumber: null,
         exercise: exercises[4],
         isChecked: false,
       },
