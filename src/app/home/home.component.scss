@@ -3,6 +3,7 @@
   align-items: stretch;
   gap: var(--padding-large);
   height: 100%;
+  box-sizing: border-box;
 
   .pages-section {
     height: calc(100% - 20% - var(--padding-large));
@@ -10,10 +11,20 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: var(--padding-large);
-    padding: var(--padding-large);
   }
 
   .mat-mdc-card {
     border-radius: 10px !important;
+  }
+
+  .mat-mdc-card-header {
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px !important;
+    border-radius: 0 !important;
   }
 }

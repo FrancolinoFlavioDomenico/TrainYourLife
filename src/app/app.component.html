@@ -1,5 +1,5 @@
 <div class="app-root-container">
-  <div class="header">
+  <div class="header-root-app">
     <mat-toolbar color="primary">
       <ng-container *ngIf="isLogged">
 
@@ -29,8 +29,6 @@
             <mat-icon>exit_to_app</mat-icon>
           </button>
         </div>
-
-
       </ng-container>
 
       <ng-container *ngIf="!isLogged">
@@ -40,7 +38,7 @@
       </ng-container>
     </mat-toolbar>
   </div>
-  <div class="body">
+  <div class="body-root-app">
     <app-navbar *ngIf="toggleMenu" (navBarItemClick)="onNavbarItemClicked($event)">
 
     </app-navbar>
@@ -50,7 +48,7 @@
     </div>
 
   </div>
-  <div class="footer">
+  <div class="footer-root-app">
     <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
       <mat-icon><mat-icon>keyboard_arrow_left</mat-icon></mat-icon>
     </button>

@@ -1,7 +1,10 @@
-<div class="list-page-container padding-large">
-  <span class="title-page" *ngIf="!!page.title">{{page.title}}</span>
+<div class="list-page-container  column">
 
-  <div class="items-container">
+  <div class="header">
+    <app-title-page-bar *ngIf="!!page.title" [titlePage]="page.title"></app-title-page-bar>
+  </div>
+
+  <div class="body padding-large">
 
     <ng-container *ngFor="let item of page.list">
       <mat-card class="card-box-shadow" (click)="onItemClick(item)">
@@ -32,7 +35,8 @@
 
   </div>
 
-  <div class="button-container" *ngIf="page.showAddButton || showConfirmButton()">
+  <div class="footer padding-large" *ngIf="page.showAddButton || showConfirmButton()">
+
     <button mat-fab color="primary" *ngIf="page.showAddButton" (click)="onAddCLick()">
       <mat-icon>add</mat-icon>
     </button>

@@ -64,10 +64,6 @@ export class UserDetailComponent implements OnInit {
     this._modalServie.open(PagamentiComponent, {
       width: '80vw',
       height: '450px',
-      /*  data: {
-        msgBody: 'Operazione avvenuta con successo',
-        isSuccessfulModal: true,
-      }, */
     });
   }
 

@@ -10,7 +10,7 @@
   justify-content: stretch;
   align-items: stretch;
 }
-.body {
+.body-root-app {
   display: flex;
   height: 100%;
   overflow: auto;
@@ -60,7 +60,7 @@ app-navbar {
   }
 }
 
-.footer {
+.footer-root-app {
   height: 50px;
   background-color: black;
   color: white;

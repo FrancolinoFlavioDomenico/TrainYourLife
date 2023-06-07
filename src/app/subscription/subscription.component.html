@@ -1,1 +1,32 @@
-<p>subscription works!</p>
+<div class="subscription-container column ">
+
+  <div class="header">
+    <app-title-page-bar titlePage="Abbonamenti sottoscritti"></app-title-page-bar>
+  </div>
+
+  <div class="body padding-large">
+
+    <ng-container *ngFor="let item of list">
+
+      <mat-card class="card-box-shadow">
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item><b>{{item.name}}</b></mat-list-item>
+            <mat-list-item><b>Sottoscritto il: </b>{{item.subscribed}}</mat-list-item>
+            <mat-list-item><b>Scadenza il: </b>{{item.expire}}</mat-list-item>
+            <mat-list-item><b>Durata: </b>{{item.lifeTime}} mesi</mat-list-item>
+          </mat-list>
+
+          <mat-card-footer *ngIf="!isCoach">
+            <div class="button-container padding-large">
+              <button mat-raised-button (click)="onRenewClick()" color="primary">Rinnova</button>
+              <button mat-stroked-button (click)="onCancelCLick()" color="primary">Cancella</button>
+            </div>
+          </mat-card-footer>
+        </mat-card-content>
+      </mat-card>
+
+    </ng-container>
+  </div>
+
+</div>

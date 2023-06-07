@@ -1,52 +1,50 @@
-<div class="reservation-container">
+<div class="reservation-container column">
+  <div class="header"><app-title-page-bar [titlePage]="getPageTitle()"></app-title-page-bar></div>
 
-  <div class="page-header padding-large">
-    {{getPageTitle()}}
-  </div>
+  <div class="body padding-large">
 
-  <div class="scheduler  padding-large">
+    <mat-card class="card-box-shadow">
+      <mat-card-content>
 
-    <div class="breakline"></div>
+        <div class="scheduler-row">
 
-    <div class="scheduler-row">
-      <div class="breakline-vetical"></div>
-
-      <ng-container *ngFor="let i of weekDays">
-        <div class="scheduler-cell scheduler-week-days">{{i}} <br> {{weekDays.indexOf(i) !== 0 ? weekDays.indexOf(i) :
-          '' }}
-        </div>
-        <div class="breakline-vetical"></div>
-      </ng-container>
-    </div>
-
-    <div class="breakline"></div>
-
-    <ng-container *ngFor="let i of hoursList;let rowIndex = index">
-
-      <div class="scheduler-row scheduler-body-row">
-        <div class="breakline-vetical"></div>
-        <div class="scheduler-cell scheduler-hours-day"> {{i}}</div>
-
-        <div class="breakline-vetical"></div>
-
-        <ng-container *ngFor="let i of cell; let columnIndex = index">
-          <div class="scheduler-cell scheduler-cell" (click)="addReservation()">
-            <div class="scheduler-cell-body" (click)="changeReservation(); $event.stopPropagation()"
-              [id]="generateCellId(rowIndex,columnIndex)">
+          <ng-container *ngFor="let i of weekDays; let index = index; let lastIndex = last; let firstIndex  = first">
+            <div class="scheduler-cell scheduler-week-days"
+              [ngClass]="{'border-top-left-radius': firstIndex,'border-top-rigth-radius': lastIndex}">
+              {{i}}
+              <br> {{weekDays.indexOf(i) !== 0 ? weekDays.indexOf(i)
+              :
+              '' }}
             </div>
+          </ng-container>
+        </div>
+
+        <ng-container *ngFor="let i of hoursList;let rowIndex = index; let lastRow = last; let firstRow = first">
+
+          <div class="scheduler-row scheduler-body-row">
+
+            <div style class="scheduler-cell scheduler-hours-day" [ngStyle]="{'border-bottom-left-radius': lastRow}">
+              {{i}}
+            </div>
+            <ng-container
+              *ngFor="let i of cell; let columnIndex = index;let lastColumns = last; let firstColumns = first">
+              <div class="scheduler-cell" (click)="addReservation()"
+                [ngClass]="{'border-bottom-right-radius':  lastRow && lastColumns,}">
+                <div class="scheduler-cell-body" (click)="changeReservation(); $event.stopPropagation()"
+                  [id]="generateCellId(rowIndex,columnIndex)">
+                </div>
+              </div>
+            </ng-container>
+
           </div>
-          <div class="breakline-vetical"></div>
+
         </ng-container>
-
-      </div>
-
-      <div class="breakline"></div>
-
-    </ng-container>
+      </mat-card-content>
+    </mat-card>
 
   </div>
 
-  <div class="button-container padding-large" *ngIf="!isCoach">
+  <div class="footer padding-large" *ngIf="!isCoach">
     <button mat-fab color="primary" matTooltip="Aggiungi prenotazione" (click)="addReservation()">
       <mat-icon>add</mat-icon>
     </button>

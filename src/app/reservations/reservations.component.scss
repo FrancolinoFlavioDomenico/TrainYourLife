@@ -1,30 +1,29 @@
 .reservation-container {
-  width: 100%;
   height: 100%;
+  max-height: 100%;
+  overflow: auto;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
+  position: relative;
 
-  .page-header {
+  .header {
     position: sticky;
     top: 0px;
-    font-weight: bold;
-    padding-bottom: 5px !important;
+    z-index: 55555;
   }
 
-  .scheduler {
-    width: 100%;
-    height: 100%;
-    max-width: 150%;
-    max-height: 100%;
-    box-sizing: border-box;
+  .body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-around;
+    box-sizing: border-box;
+    height: 100% !important;
+    max-height: 100% !important;
     overflow: auto;
+
+    .mat-mdc-card-content {
+      padding: 5px !important;
+    }
 
     .scheduler-row {
       display: flex;
@@ -37,6 +36,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border: 1px solid black;
+    }
+
+    .border-top-left-radius {
+      border-top-left-radius: 10px;
+    }
+    .border-top-rigth-radius {
+      border-top-right-radius: 10px;
+    }
+    .border-bottom-left-radius {
+      border: 50px solid green;
+      border-bottom-left-radius: 10px;
+    }
+    .border-bottom-right-radius {
+      border-bottom-right-radius: 10px;
     }
 
     .scheduler-week-days,
@@ -47,16 +61,27 @@
     }
   }
 
+  .footer {
+    position: absolute;
+    padding: 16px;
+    bottom: 0;
+    right: 0;
+    display: flex;
+
+    button {
+      box-shadow: var(--default-box-shadow);
+    }
+  }
   .breakline {
     width: 100%;
-    height: 2px;
+    height: 1px;
     align-self: center;
     background-color: black;
   }
 
   .breakline-vetical {
-    width: 2px;
-    height: 110%;
+    width: 1px;
+    height: 90%;
     align-self: center;
     background-color: black;
   }
@@ -69,16 +94,5 @@
     align-self: flex-end;
     margin-bottom: 2px;
     font-size: 0.8em;
-  }
-
-  .button-container {
-    position: absolute;
-    padding-top: 0px;
-    text-align: end;
-    bottom: 0px;
-    right: 0px;
-    button {
-      box-shadow: var(--default-box-shadow);
-    }
   }
 }

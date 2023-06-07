@@ -1,37 +1,36 @@
 .list-page-container {
-  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--padding-large);
+  max-height: 100%;
+  overflow: auto;
   box-sizing: border-box;
   align-items: stretch;
-  justify-content: stretch;
+  position: relative;
 
-  .title-page {
-    color: var(--secondary-color);
-    font-weight: bold;
-    height: fit-content;
-    max-height: fit-content;
+  .header {
+    position: sticky;
+    top: 0px;
+    z-index: 55555;
   }
 
-  .items-container {
-    height: 100%;
+  .body {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: var(--padding-large);
     box-sizing: border-box;
-    width: 100%;
+    height: 100%;
+    padding-bottom: calc(16px * 2);
   }
 
-  .button-container {
-    width: 100%;
+  .footer {
+    position: absolute;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
+    bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-end;
     .confirm-button {
-      align-self: center;
+      width: 100%;
     }
   }
 

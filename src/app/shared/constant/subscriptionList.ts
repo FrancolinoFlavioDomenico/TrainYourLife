@@ -15,4 +15,18 @@ export const subscriptionList: SubscriptionModel[] = [
     lifeTime: 3,
     name: 'Abbonamento trimestrale funzionale',
   },
+  {
+    id: 1,
+    subscribed: '01/02/2023',
+    expire: '01/05/2023',
+    lifeTime: 3,
+    name: 'Abbonamento trimestrale funzionale',
+  },
+  {
+    id: 1,
+    subscribed: '01/02/2023',
+    expire: '01/05/2023',
+    lifeTime: 3,
+    name: 'Abbonamento trimestrale funzionale',
+  },
 ];
