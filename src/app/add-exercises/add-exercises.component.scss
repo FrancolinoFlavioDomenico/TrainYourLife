@@ -36,8 +36,27 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .drop-zone-label-container {
+      display: flex;
+      align-items: center;
+    }
+
+    ngx-dropzone {
+      display: flex;
       justify-content: stretch;
-      gap: 16px;
+    }
+
+    ngx-dropzone-preview {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    ngx-dropzone-remove-badge {
+      width: 50px !important;
+      height: 50px !important;
     }
   }
 

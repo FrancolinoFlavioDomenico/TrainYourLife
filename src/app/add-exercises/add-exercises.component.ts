@@ -14,6 +14,8 @@ export class AddExercisesComponent implements OnInit {
   public titlePage: string;
   public exercise: ExerciseModel;
 
+  public files: File[] = [];
+
   constructor(
     private _activeRoute: ActivatedRoute,
     private _modalService: MatDialog
@@ -33,5 +35,21 @@ export class AddExercisesComponent implements OnInit {
         isSuccessfulModal: true,
       },
     });
+  }
+
+  public onSelect(event) {
+    console.log(event);
+
+    this.files.push(...event.addedFiles);
+
+    const formData = new FormData();
+
+    for (var i = 0; i < this.files.length; i++) {
+      formData.append('file[]', this.files[i]);
+    }
+  }
+
+  public onRemove(event) {
+    this.files.splice(this.files.indexOf(event), 1);
   }
 }

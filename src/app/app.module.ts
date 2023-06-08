@@ -32,6 +32,7 @@ import { PagamentiComponent } from './pagamenti/pagamenti.component';
 import { TitlePageBarComponent } from './shared/component/title-page-bar/title-page-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { AddExercisesComponent } from './add-exercises/add-exercises.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AddExercisesComponent } from './add-exercises/add-exercises.component';
     FormsModule,
     ReactiveFormsModule,
     NgxMatTimepickerModule,
+    NgxDropzoneModule,
   ],
   providers: [
     SessionStorageService,

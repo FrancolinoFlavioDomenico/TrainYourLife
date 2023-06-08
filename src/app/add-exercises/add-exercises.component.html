@@ -12,18 +12,31 @@
           <input matInput [value]="!!exercise.name ? exercise.name : null">
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Descrizione Testuale</mat-label>
+          <mat-label>Descrizione e/o spiegazione testuale</mat-label>
           <textarea matInput rows="10"></textarea>
         </mat-form-field>
-        <mat-form-field>
-          <mat-label>Tempo di riposo (minuti)</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <span class="or-span">o</span>
-        <mat-form-field>
-          <mat-label>Tempo di lavoro (minuti)</mat-label>
-          <input matInput>
-        </mat-form-field>
+
+
+        <ngx-dropzone (change)="onSelect($event)">
+
+          <ngx-dropzone-label>
+            <div class="drop-zone-label-container">
+              Carica immagini allegate <br>o<br> video lezioni
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="upload"></mat-icon>
+            </div>
+          </ngx-dropzone-label>
+
+          <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+
+            <ngx-dropzone-label>
+              <div class="drop-zone-preview-label-container">
+                {{ f.name }} ({{ f.type }})
+              </div>
+            </ngx-dropzone-label>
+
+          </ngx-dropzone-preview>
+
+        </ngx-dropzone>
       </mat-card-content>
     </mat-card>
   </div>

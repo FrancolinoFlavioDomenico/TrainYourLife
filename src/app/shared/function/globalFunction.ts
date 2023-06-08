@@ -120,7 +120,7 @@ export function mapListPageFromUserDetail(pageToMap: string): ListPageModel {
         title: 'Seleziona scheda:',
         showAddButton: false,
         showConfirmButton: true,
-        list: cards.map((item) => {
+        list: cards.slice(1, cards.length).map((item) => {
           return {
             title: item.name,
             itemId: item.id,
