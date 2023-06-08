@@ -60,6 +60,40 @@ export const cards: CardModel[] = [
   },
   {
     id: 1,
+    name: 'Scehda odierna',
+    linkedExercises: [
+      {
+        workTime: 2,
+        sleepTime: 0.5,
+        roundNumber: 2,
+        exercise: exercises[1],
+        isChecked: true,
+      },
+      {
+        workTime: 0,
+        sleepTime: 0,
+        roundNumber: 0,
+        exercise: exercises[2],
+        isChecked: false,
+      },
+      {
+        workTime: 2,
+        sleepTime: 0.5,
+        roundNumber: 3,
+        exercise: exercises[3],
+        isChecked: true,
+      },
+      {
+        workTime: 2,
+        sleepTime: 0.5,
+        roundNumber: 2,
+        exercise: exercises[4],
+        isChecked: true,
+      },
+    ],
+  },
+  {
+    id: 2,
     name: 'Cardio',
     linkedExercises: [
       {

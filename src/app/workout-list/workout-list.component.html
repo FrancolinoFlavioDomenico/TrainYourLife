@@ -1,1 +1,38 @@
-<p>workout-list works!</p>
+<div class="workout-list-container column">
+  <div class="header">
+    <app-title-page-bar titlePage="Allenamento"></app-title-page-bar>
+  </div>
+  <div class="body padding-large">
+    <mat-card class="card-box-shadow main-card-card">
+      <mat-card-header>
+        <mat-card-title><b>Scheda odierna:</b></mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="padding-large">
+        <ng-container *ngFor="let item of currentCardExercise">
+          <span class="card-exercise-item">{{item.name}}</span>
+        </ng-container>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button routerLink="/allenamenti/1" mat-mini-fab color="accent">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-divider></mat-divider>
+    <div class="secondary-card-card">
+      <span><b>Altre schede:</b></span>
+      <div class="other-card-container">
+        <ng-container *ngFor=" let item of otherCardList;let i = index">
+          <mat-card class="card-box-shadow">
+            <mat-card-content [routerLink]="getWorkPageUrl(i)" class="card-content-single-other-card">
+              <span>{{item.name}}</span>
+              <span><mat-icon class="mat-18">keyboard_arrow_right</mat-icon></span>
+            </mat-card-content>
+          </mat-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

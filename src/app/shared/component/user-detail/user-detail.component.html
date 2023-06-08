@@ -1,75 +1,83 @@
-<div class="user-datail-container column padding-large">
-  <app-profile-section [isHomePage]="false" [user]="user"></app-profile-section>
+<div class="user-datail-container column">
 
-  <div class="sections-container">
-    <mat-card class="card-box-shadow">
-      <mat-card-header>
-        <mat-card-title>Bio:</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="section-title">{{user.bio}}</mat-card-content>
-    </mat-card>
+  <div class=" header">
+    <app-title-page-bar [titlePage]="isCoach ? 'Profilo cliente' : 'Profilo coach'"></app-title-page-bar>
+  </div>
 
-    <mat-card class="card-box-shadow" *ngIf="!hiddenGridSection() ">
-      <mat-card-header>
-        <mat-card-title>
-          {{isCoach ? "seleziona un attivita:" : "Corsi offerti:"}}
-        </mat-card-title>
-      </mat-card-header>
+  <div class="body ">
+    <app-profile-section [isHomePage]="false" [user]="user" class="profile padding-large"></app-profile-section>
 
-      <mat-card-content class="section-grid-body">
+    <div class="other-section-container padding-large">
+      <mat-card class="card-box-shadow">
+        <mat-card-header>
+          <mat-card-title>Bio:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="section-title">{{user.bio}}</mat-card-content>
+      </mat-card>
 
-        <ng-container *ngIf="showSubscribedUserCardSection();">
+      <mat-card class="card-box-shadow" *ngIf="!hiddenGridSection() ">
+        <mat-card-header>
+          <mat-card-title>
+            {{isCoach ? "seleziona un attivita:" : "Corsi offerti:"}}
+          </mat-card-title>
+        </mat-card-header>
 
-          <mat-card class="card-box-shadow" [ngStyle]="setCardCover('progressi')" routerLink="/progressi">
-            <mat-card-header>
-              <mat-card-title>progressi</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-          </mat-card>
+        <mat-card-content class="section-grid-body">
 
-          <mat-card class="card-box-shadow" [ngStyle]="setCardCover('abbonamenti')" routerLink="/abbonamenti">
-            <mat-card-header>
-              <mat-card-title>abbonamenti</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-          </mat-card>
+          <ng-container *ngIf="showSubscribedUserCardSection();">
 
-          <mat-card class="card-box-shadow" (click)="onCardClick('schede')" [ngStyle]="setCardCover('schede')">
-            <mat-card-header>
-              <mat-card-title>aggiungi scheda <br> esistente</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-          </mat-card>
-
-          <mat-card class="card-box-shadow" (click)="onCardClick('schede/0')" [ngStyle]="setCardCover('addNewCard')">
-            <mat-card-header>
-              <mat-card-title>aggiungi nuova <br> scheda</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-          </mat-card>
-        </ng-container>
-        <ng-container *ngIf="!isCoach">
-          <ng-container *ngFor="let item of getOfferedCourse(user.id)">
-
-            <mat-card class="card-box-shadow" [ngStyle]="setCardCover(item)">
+            <mat-card class="card-box-shadow" [ngStyle]="setCardCover('progressi')" routerLink="/progressi">
               <mat-card-header>
-                <mat-card-title>{{item}}</mat-card-title>
+                <mat-card-title>progressi</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card-box-shadow" [ngStyle]="setCardCover('abbonamenti')" routerLink="/abbonamenti">
+              <mat-card-header>
+                <mat-card-title>abbonamenti</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card-box-shadow" (click)="onCardClick('schede')" [ngStyle]="setCardCover('schede')">
+              <mat-card-header>
+                <mat-card-title>aggiungi scheda <br> esistente</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card-box-shadow" (click)="onCardClick('schede/0')" [ngStyle]="setCardCover('addNewCard')">
+              <mat-card-header>
+                <mat-card-title>aggiungi nuova <br> scheda</mat-card-title>
               </mat-card-header>
               <mat-card-content>
               </mat-card-content>
             </mat-card>
           </ng-container>
-        </ng-container>
+          <ng-container *ngIf="!isCoach">
+            <ng-container *ngFor="let item of getOfferedCourse(user.id)">
 
-      </mat-card-content>
-    </mat-card>
+              <mat-card class="card-box-shadow" [ngStyle]="setCardCover(item)">
+                <mat-card-header>
+                  <mat-card-title>{{item}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                </mat-card-content>
+              </mat-card>
+            </ng-container>
+          </ng-container>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div>
   </div>
 
-  <div class="button-container padding-large">
+  <div class="row footer padding-large">
     <button mat-raised-button (click)="onSubscribeCLick()" color="primary" *ngIf="!isCoach">Abbonati</button>
     <button mat-stroked-button (click)="onRefuseCLick()" color="primary"
       *ngIf="showSubscribeAcceptationButton()">Rifiuta</button>
