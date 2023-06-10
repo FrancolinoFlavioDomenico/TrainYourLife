@@ -34,6 +34,7 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
 import { AddExercisesComponent } from './add-exercises/add-exercises.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
+import { ContenteditableValueAccessorDirective } from './shared/directives/contenteditable-value-accessor.directive';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { RoundProgressModule } from 'angular-svg-round-progressbar';
     TitlePageBarComponent,
     CardDetailComponent,
     AddExercisesComponent,
+    ContenteditableValueAccessorDirective,
   ],
   imports: [
     BrowserModule,

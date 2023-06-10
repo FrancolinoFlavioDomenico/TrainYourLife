@@ -1,1 +1,30 @@
-<p>chat works!</p>
+<div class="chat-container column">
+  <div class="header">
+    <app-title-page-bar titlePage="Chat con Marco rossi"></app-title-page-bar>
+  </div>
+
+  <div class="body padding-large">
+    <mat-card class="card-box-shadow">
+      <mat-card-content>
+
+        <ng-container *ngFor="let i of msgToPrint">
+          <div class="msg-container"
+            [ngClass]="{'received-msg-container': i.received, 'sended-msg-container': !i.received,}">
+            {{i.value}}
+          </div>
+        </ng-container>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="form-field-container">
+          <div class="msg-input" contenteditable [(ngModel)]="currentMsg">
+          </div>
+        </div>
+        <div>
+          <button mat-icon-button (click)="onSendClick()">
+            <mat-icon color="primary">send</mat-icon>
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
+  </div>

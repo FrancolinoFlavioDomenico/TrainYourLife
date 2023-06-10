@@ -1,0 +1,111 @@
+.chat-container {
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  align-items: stretch;
+  position: relative;
+
+  .header {
+    position: sticky;
+    top: 0px;
+    z-index: 55555;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-large);
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+
+    .mat-mdc-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding-large);
+      box-sizing: border-box;
+      height: 100%;
+      max-height: 100%;
+      overflow: auto;
+      width: 100%;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    .mat-mdc-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding-large);
+      box-sizing: border-box;
+      height: 100%;
+      max-height: 100%;
+      overflow: auto;
+      width: 100%;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    .mat-mdc-card-footer {
+      position: sticky;
+      bottom: 0px;
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      gap: 16px;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px 16px;
+
+      .form-field-container {
+        border: 1px solid black;
+        border-radius: 2em;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        max-height: 60px;
+        overflow: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 8px 10px;
+        align-items: center;
+
+        .msg-input {
+          min-height: 20px;
+          display: flex;
+          flex-direction: column;
+          height: fit-content;
+          max-height: 50px;
+          overflow: auto;
+          width: 95%;
+          max-width: 95%;
+        }
+
+        [contenteditable] {
+          outline: 0px solid transparent;
+        }
+      }
+    }
+
+    .msg-container {
+      width: fit-content;
+      max-width: 80%;
+      word-wrap: break-word;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    .received-msg-container {
+      background-color: var(--secondary-color);
+      align-self: flex-start;
+    }
+    .sended-msg-container {
+      align-self: flex-end;
+      background-color: var(--primary-color);
+    }
+  }
+}
