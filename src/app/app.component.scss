@@ -1,8 +1,6 @@
 @import ".././assets/scss/palette";
 @import ".././assets/scss/layout";
 .app-root-container {
-  /*   height: 800px;
-  width: 360px; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -16,6 +14,7 @@
   overflow: auto;
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 
   .body-content {
     width: 100%;

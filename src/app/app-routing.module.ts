@@ -117,7 +117,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'allenamenti/:cardId',
+    path: 'allenamento/:exerciseId',
     component: WorkoutComponent,
     pathMatch: 'full',
   },

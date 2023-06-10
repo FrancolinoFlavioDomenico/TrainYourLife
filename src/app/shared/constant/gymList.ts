@@ -10,10 +10,31 @@ export const course = [
 
 export const exercises: ExerciseModel[] = [
   { id: 0, name: null, description: null, mediaUrl: null },
-  { id: 1, name: 'Jumping jack', description: 'string', mediaUrl: 'string' },
-  { id: 2, name: 'Crunch', description: 'string', mediaUrl: 'string' },
-  { id: 3, name: 'Panca piana', description: 'string', mediaUrl: 'string' },
-  { id: 4, name: 'Tapis rulant', description: 'string', mediaUrl: 'string' },
+  {
+    id: 1,
+    name: 'Jumping jack',
+    description: 'Saltellare alternando chiusura della gambe e delle braccia',
+    mediaUrl: '../../../assets/media/exerciseGif/jumpingJacks.gif',
+  },
+  {
+    id: 2,
+    name: 'Crunch',
+    description:
+      'Sdraito di schiena in terra porre le braccia in avanti e sollevare il busto',
+    mediaUrl: '../../../assets/media/exerciseGif/crunch.gif',
+  },
+  {
+    id: 3,
+    name: 'Panca piana',
+    description: 'Sdraiarsi di schiena sulla panca e sollevare il bilanciare',
+    mediaUrl: '../../../assets/media/exerciseGif/pancaPiana.gif',
+  },
+  {
+    id: 4,
+    name: 'Tapis rulant',
+    description: 'Impostare il il tapis rulant a velocita 5',
+    mediaUrl: '../../../assets/media/exerciseGif/tapisRulant.gif',
+  },
 ];
 
 export const cards: CardModel[] = [
@@ -60,35 +81,35 @@ export const cards: CardModel[] = [
   },
   {
     id: 1,
-    name: 'Scehda odierna',
+    name: 'Scheda odierna',
     linkedExercises: [
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 500,
+        sleepTime: 500,
         roundNumber: 2,
         exercise: exercises[1],
         isChecked: true,
       },
       {
-        workTime: 0,
-        sleepTime: 0,
-        roundNumber: 0,
+        workTime: 500,
+        sleepTime: 500,
+        roundNumber: 2,
         exercise: exercises[2],
-        isChecked: false,
+        isChecked: true,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 500,
+        sleepTime: 500,
         roundNumber: 3,
         exercise: exercises[3],
         isChecked: true,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 500,
+        sleepTime: 500,
         roundNumber: 2,
         exercise: exercises[4],
-        isChecked: true,
+        isChecked: false,
       },
     ],
   },
@@ -97,8 +118,8 @@ export const cards: CardModel[] = [
     name: 'Cardio',
     linkedExercises: [
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 120000,
+        sleepTime: 30000,
         roundNumber: 2,
         exercise: exercises[1],
         isChecked: true,
@@ -111,15 +132,15 @@ export const cards: CardModel[] = [
         isChecked: false,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 120000,
+        sleepTime: 30000,
         roundNumber: 3,
         exercise: exercises[3],
         isChecked: true,
       },
       {
-        workTime: 2,
-        sleepTime: 0.5,
+        workTime: 120000,
+        sleepTime: 30000,
         roundNumber: 2,
         exercise: exercises[4],
         isChecked: true,

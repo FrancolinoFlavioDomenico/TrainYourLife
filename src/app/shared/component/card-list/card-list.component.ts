@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  AfterViewChecked,
+  AfterContentInit,
+} from '@angular/core';
 import { ListService } from '../../service/list.service';
 import { ListItemModel } from '../../model/list.model';
 import { ActivatedRoute, Route, Router } from '@angular/router';
@@ -11,10 +17,14 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss'],
 })
-export class CardListComponent implements OnInit {
+export class CardListComponent
+  implements OnInit, AfterViewInit, AfterContentInit
+{
   public page = this._listService.getPage();
 
   public isCoach = this._userInfoService.getIsCoach();
+
+  public componentIsInit = false;
 
   constructor(
     private _listService: ListService,
@@ -59,5 +69,15 @@ export class CardListComponent implements OnInit {
   public onAddCLick(): void {
     if (this._router.url === '/schede') this._router.navigate(['/schede/0']);
     else this._router.navigate(['/esercizi/0']);
+  }
+
+  public ngAfterViewInit(): void {
+    //this.componentIsInit = true;
+  }
+
+  public ngAfterContentInit(): void {
+    setTimeout(() => {
+      this.componentIsInit = true;
+    }, 200);
   }
 }

@@ -23,6 +23,7 @@
     "@fullcalendar/angular": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/interaction": "^6.1.8",
+    "angular-svg-round-progressbar": "^11.0.0",
     "angular-web-storage": "^15.0.0",
     "ngx-dropzone": "^3.1.0",
     "ngx-mat-timepicker": "^16.0.0",

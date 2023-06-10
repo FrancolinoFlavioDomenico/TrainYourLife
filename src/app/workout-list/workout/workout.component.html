@@ -1,1 +1,52 @@
-<p>workout works!</p>
+<div class="workout-container column">
+  <div class="header">
+    <app-title-page-bar [titlePage]="card.name"></app-title-page-bar>
+  </div>
+  <div class="body padding-large">
+
+    <mat-card class="card-box-shadow">
+      <mat-card-header>
+        <mat-card-title><b>Esercizio {{exerciseIndex + 1}}: {{exerciseList[exerciseIndex].name}}</b></mat-card-title>
+        <mat-card-subtitle>
+          Riprese: {{activeCardExercise[exerciseIndex].roundNumber}} {{'&nbsp;'}}{{'&nbsp;'}}{{'&nbsp;'}}
+          Durata ripresa: {{convertMillisecondsToMinute(activeCardExercise[exerciseIndex].workTime)}} minuti
+          <br>
+          Riposo: {{convertMillisecondsToMinute(activeCardExercise[exerciseIndex].sleepTime)}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="exercise-description-and-picture">
+        <mat-divider></mat-divider>
+
+        <ng-container *ngIf="!isSleeping">
+          <div class="description-container">
+            {{activeCardExercise[exerciseIndex].exercise.description}}
+          </div>
+          <div class="picture-container">
+            <picture>
+              <source [srcset]="activeCardExercise[exerciseIndex].exercise.mediaUrl">
+              <img [srcset]="activeCardExercise[exerciseIndex].exercise.mediaUrl">
+            </picture>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isSleeping">
+          <b>RIPOSO</b>
+        </ng-container>
+      </mat-card-content>
+      <mat-card-footer class="timer">
+        <span class="text-timer">{{!isSleeping ? "Work:" : "Riposo"}} <br>
+          {{convertMillisecondsToMinute(currentTimeValue)}}</span>
+        <round-progress [current]="currentTimeValue" [max]="currentMaxTimeValue" [color]="'#1976d2'"
+          [background]="'#9fa8da'" [stroke]="20" [semicircle]="false" [rounded]="true" [clockwise]="false"
+          [responsive]="true" [animation]="'linearEase'" [animationDelay]="0"></round-progress>
+      </mat-card-footer>
+    </mat-card>
+
+  </div>
+  <div class="footer row padding-large">
+    <button mat-raised-button (click)="onNextClick()" color="primary">
+      <span>{{totalExerciseOfCard === (exerciseIndex + 1) ? "Termina scheda" : "Prossimo"}}</span>
+      <mat-icon class="mat-18">keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

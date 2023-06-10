@@ -5,17 +5,40 @@ import { NavigationEnd, Router } from '@angular/router';
 import { ConfimModalComponent } from './shared/component/confim-modal/confim-modal.component';
 import { UserInfoService } from './shared/service/user-info.service';
 import { filter } from 'rxjs';
-import { clientList, coachList } from './shared/constant/peopleList';
-import { cards, course, exercises } from './shared/constant/gymList';
-import { ListPageModel } from './shared/model/list.model';
 import { ListService } from './shared/service/list.service';
 import { mapListPageFromHome } from './shared/function/globalFunction';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('openClose', [
+      // ...
+      state(
+        'open',
+        style({
+          transform: 'rotate(0)',
+        })
+      ),
+      state(
+        'closed',
+        style({
+          transform: 'rotate(90deg)',
+        })
+      ),
+      transition('open => closed', [animate('0.2s')]),
+      transition('closed => open', [animate('0.2s')]),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
   title = 'trainYourLife';

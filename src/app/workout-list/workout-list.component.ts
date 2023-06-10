@@ -25,6 +25,6 @@ export class WorkoutListComponent implements OnInit {
   }
 
   public getWorkPageUrl(cardId: number): string {
-    return '/allenamenti/' + (cardId + 2);
+    return '/allenamento/' + (cardId + 2);
   }
 }

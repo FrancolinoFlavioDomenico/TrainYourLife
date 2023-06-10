@@ -33,6 +33,7 @@ import { TitlePageBarComponent } from './shared/component/title-page-bar/title-p
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { AddExercisesComponent } from './add-exercises/add-exercises.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ReactiveFormsModule,
     NgxMatTimepickerModule,
     NgxDropzoneModule,
+    RoundProgressModule,
   ],
   providers: [
     SessionStorageService,
