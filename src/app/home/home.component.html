@@ -1,6 +1,10 @@
-<div class="home-container column padding-large">
-  <app-profile-section></app-profile-section>
-  <div class="pages-section">
+<div class="home-container padding-large">
+
+  <div class="header">
+    <app-profile-section></app-profile-section>
+  </div>
+
+  <div class="body">
     <ng-container *ngFor="let item of menuItemWhitOutHome">
       <mat-card (click)="onCardClick(item)" class="card-box-shadow" [ngStyle]="setCardCover(item)">
         <mat-card-header>
@@ -11,5 +15,4 @@
       </mat-card>
     </ng-container>
   </div>
-
 </div>

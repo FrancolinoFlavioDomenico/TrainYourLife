@@ -22,7 +22,6 @@ import {
   encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('openClose', [
-      // ...
       state(
         'open',
         style({
@@ -35,8 +34,24 @@ import {
           transform: 'rotate(90deg)',
         })
       ),
-      transition('open => closed', [animate('0.2s')]),
-      transition('closed => open', [animate('0.2s')]),
+      transition('open => closed', [animate('0.3s')]),
+      transition('closed => open', [animate('0.3s')]),
+    ]),
+    trigger('openCloseNavBar', [
+      state(
+        'open',
+        style({
+          left: '0px',
+        })
+      ),
+      state(
+        'closed',
+        style({
+          left: '-200px',
+        })
+      ),
+      transition('open => closed', [animate('0.3s')]),
+      transition('closed => open', [animate('0.3s')]),
     ]),
   ],
 })
@@ -48,6 +63,8 @@ export class AppComponent implements OnInit {
   public isLogged: boolean;
 
   public titlePage: string;
+
+  public isNotifierOpen = false;
 
   constructor(
     private _userInfoService: UserInfoService,
@@ -76,15 +93,6 @@ export class AppComponent implements OnInit {
           .replaceAll('_', ' ')
           .toUpperCase();
       });
-
-    //reload to home when reload browser
-    /*     this._router.events
-      .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
-      .subscribe((event) => {
-        if (event.id === 1 && event.url === event.urlAfterRedirects) {
-          this._router.navigate(['/home']);
-        }
-      }); */
   }
 
   public onHamburgerMenuClicked() {
@@ -98,6 +106,10 @@ export class AppComponent implements OnInit {
       this._router.navigate(['/' + valueEmitted + '/coach']);
     else this._router.navigate(['/' + valueEmitted]);
     this.toggleMenu = !this.toggleMenu;
+  }
+
+  public onNotifierclick(): void {
+    this.isNotifierOpen = !this.isNotifierOpen;
   }
 
   public onLogOutClick(): void {
