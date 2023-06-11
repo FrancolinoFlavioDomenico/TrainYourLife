@@ -141,7 +141,9 @@ export class AppComponent implements OnInit {
         },
       });
 
-    this._navigationService.savedRoutes = ['/login'];
+    this._navigationService.savedRoutes = [
+      { url: '/login', listPageData: this._listService.getPage() },
+    ];
   }
 
   public onBackClick() {

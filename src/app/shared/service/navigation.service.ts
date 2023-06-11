@@ -8,10 +8,11 @@ import {
 } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfimModalComponent } from '../component/confim-modal/confim-modal.component';
+import { ListPageModel } from '../model/list.model';
 
 @Injectable()
 export class NavigationService {
-  public savedRoutes: string[] = [];
+  public savedRoutes: { url: string; listPageData?: ListPageModel }[] = [];
 
   constructor(
     private _router: Router,
@@ -26,8 +27,11 @@ export class NavigationService {
     this._router.events.subscribe((e) => {
       console.log(e);
       if (e instanceof NavigationEnd) {
-        if (!this.savedRoutes.find((i) => i === e.urlAfterRedirects))
-          this.savedRoutes.push(e.urlAfterRedirects);
+        if (!this.savedRoutes.find((i) => i.url === e.urlAfterRedirects))
+          this.savedRoutes.push({
+            url: e.urlAfterRedirects,
+            listPageData: this._listService.getPage(),
+          });
       }
     });
   }
@@ -35,7 +39,7 @@ export class NavigationService {
   public getPreviuousPage(): void {
     if (
       this.savedRoutes.length <= 1 &&
-      !this.savedRoutes.find((i) => i === '/logon')
+      !this.savedRoutes.find((i) => i.url === '/logon')
     ) {
       this._modalService
         .open(ConfimModalComponent, {
@@ -50,7 +54,8 @@ export class NavigationService {
         .subscribe({
           next: (res) => {
             if (res) {
-              this.savedRoutes.pop();
+              const backSavedRoute = this.savedRoutes.pop();
+              this._listService.setPage(backSavedRoute.listPageData);
               if (this.savedRoutes.length > 0) {
                 this.location.back();
               } else {
@@ -60,7 +65,8 @@ export class NavigationService {
           },
         });
     } else {
-      this.savedRoutes.pop();
+      const backSavedRoute = this.savedRoutes.pop();
+      this._listService.setPage(backSavedRoute.listPageData);
       if (this.savedRoutes.length > 0) {
         this.location.back();
       } else {
