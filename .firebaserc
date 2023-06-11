@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "trainyourlife-cd5e0": {
+      "hosting": {
+        "trainYourLife": [
+          "trainyourlife-cd5e0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "trainyourlife-cd5e0"
+  }
+}
