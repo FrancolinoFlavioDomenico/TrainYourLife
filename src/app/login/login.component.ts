@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      mail: new FormControl(null, Validators.required),
+      mail: new FormControl(null, [Validators.required, Validators.email]),
       psw: new FormControl(null, Validators.required),
     });
   }
@@ -35,9 +35,5 @@ export class LoginComponent implements OnInit {
     );
 
     this._userInfoService.setStorageServiceValue('isLogged', true);
-  }
-
-  public onLogonClick(): void {
-    // this._navigationService.savedRoutes = ['/logon'];
   }
 }

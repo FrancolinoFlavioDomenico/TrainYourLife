@@ -83,14 +83,4 @@ export const clientList: ClientModel[] = [
     psw: '123',
     sex: 'M',
   },
-  {
-    id: 3,
-    name: 'Tommaso',
-    surname: 'Giallo',
-    age: 35,
-    bio: 'Lorem',
-    mail: 'Tommaso.Giallo@mail.com',
-    psw: '123',
-    sex: 'M',
-  },
 ];

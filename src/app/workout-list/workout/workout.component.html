@@ -11,7 +11,7 @@
           Riprese: {{activeCardExercise[exerciseIndex].roundNumber}} {{'&nbsp;'}}{{'&nbsp;'}}{{'&nbsp;'}}
           Durata ripresa: {{convertMillisecondsToMinute(activeCardExercise[exerciseIndex].workTime)}} minuti
           <br>
-          Riposo: {{convertMillisecondsToMinute(activeCardExercise[exerciseIndex].sleepTime)}}
+          Riposo: {{convertMillisecondsToMinute(activeCardExercise[exerciseIndex].sleepTime)}} minuti
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content class="exercise-description-and-picture">
@@ -30,7 +30,18 @@
         </ng-container>
 
         <ng-container *ngIf="isSleeping">
-          <b>RIPOSO</b>
+          <div class="mini-game-title">
+            Un mini quiz per ingannare il tempo di riposo
+          </div>
+          <div class="mini-game-game">
+            <span><b>Chi ha scoperto l'america?</b></span>
+            <mat-radio-group aria-label="Select an option" (change)="onRadioSelected($event.value)">
+              <mat-radio-button value="1">Garibaldi</mat-radio-button>
+              <mat-radio-button value="2">Cristoforo colombo</mat-radio-button>
+              <mat-radio-button value="3">Darwin</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
         </ng-container>
       </mat-card-content>
       <mat-card-footer class="timer">

@@ -3,6 +3,8 @@ import { ExerciseModel } from './../../shared/model/exercises.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { cards } from 'src/app/shared/constant/gymList';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfimModalComponent } from 'src/app/shared/component/confim-modal/confim-modal.component';
 
 @Component({
   selector: 'app-workout',
@@ -32,7 +34,11 @@ export class WorkoutComponent implements OnInit {
 
   private _interval;
 
-  constructor(private _activedRoute: ActivatedRoute, private _router: Router) {}
+  constructor(
+    private _activedRoute: ActivatedRoute,
+    private _router: Router,
+    private _modalServie: MatDialog
+  ) {}
 
   public ngOnInit(): void {
     const cardId = this._activedRoute.snapshot.paramMap.get('exerciseId');
@@ -125,6 +131,19 @@ export class WorkoutComponent implements OnInit {
       this.currentMaxTimeValue =
         this.activeCardExercise[this.exerciseIndex].workTime;
       this._updateWorkoutTimer();
+    }
+  }
+
+  public onRadioSelected(checkedValue): void {
+    if (checkedValue == 2) {
+      this._modalServie.open(ConfimModalComponent, {
+        width: '300px',
+        height: '50px',
+        data: {
+          msgBody: 'Risposta esatta',
+          isSuccessfulModal: true,
+        },
+      });
     }
   }
 }

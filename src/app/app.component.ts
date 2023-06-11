@@ -147,6 +147,16 @@ export class AppComponent implements OnInit {
   }
 
   public onBackClick() {
-    if (!this.isLoginPage) this._navigationService.getPreviuousPage();
+    if (
+      this._router.url.includes('progressi') &&
+      !this._userInfoService.getIsCoach()
+    ) {
+      this._navigationService.savedRoutes = [
+        { url: '/home', listPageData: this._listService.getPage() },
+      ];
+      this._router.navigate(['/home']);
+    } else {
+      if (!this.isLoginPage) this._navigationService.getPreviuousPage();
+    }
   }
 }
