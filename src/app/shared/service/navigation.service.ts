@@ -25,8 +25,11 @@ export class NavigationService {
 
   private _saveCurrentRoute(): void {
     this._router.events.subscribe((e) => {
-      console.log(e);
       if (e instanceof NavigationEnd) {
+        if (e.id === 1 && e.url === e.urlAfterRedirects) {
+          this._router.navigate(['']);
+        }
+
         if (!this.savedRoutes.find((i) => i.url === e.urlAfterRedirects))
           this.savedRoutes.push({
             url: e.urlAfterRedirects,
