@@ -1,8 +1,6 @@
 <div class="modal-container" [ngClass]="{'modal-container-green': dataFromParent?.isSuccessfulModal}">
   <div class="modal-header" *ngIf="!dataFromParent?.isSuccessfulModal">
-    <mat-toolbar color="primary">
-      <span>Conferma operazione</span>
-    </mat-toolbar>
+    <span>Conferma operazione</span>
   </div>
   <div class="modal-body padding-large">
     {{dataFromParent?.msgBody}}

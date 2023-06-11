@@ -4,14 +4,10 @@ import { UserInfoService } from '../../service/user-info.service';
 import { coachList, clientList } from '../../constant/peopleList';
 import { CoachModel } from '../../model/coach.model';
 import { ClientModel } from '../../model/client.model';
-import {
-  mapListPageFromHome,
-  mapListPageFromUserDetail,
-} from '../../function/globalFunction';
+import { mapListPageFromUserDetail } from '../../function/globalFunction';
 import { ListService } from '../../service/list.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfimModalComponent } from '../confim-modal/confim-modal.component';
-import { retry } from 'rxjs';
 import { PagamentiComponent } from 'src/app/pagamenti/pagamenti.component';
 
 @Component({
@@ -62,8 +58,8 @@ export class UserDetailComponent implements OnInit {
 
   public onSubscribeCLick(): void {
     this._modalServie.open(PagamentiComponent, {
-      width: '80vw',
-      height: '450px',
+      width: '300px',
+      height: '415px',
     });
   }
 

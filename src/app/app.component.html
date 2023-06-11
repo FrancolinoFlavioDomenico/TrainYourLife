@@ -32,18 +32,16 @@
       </ng-container>
 
       <ng-container *ngIf="!isLogged">
-        <div class="right-side">
+        <div class="right-side padding-large">
           <span class="appTitle">Train your life</span>
         </div>
       </ng-container>
     </mat-toolbar>
 
     <div class="notifier-panel card-box-shadow" *ngIf="isNotifierOpen">
-      <mat-list dense>
-        <mat-list-item [routerLink]="['/chat']">
-          Marco rossi ti ha inviato un messagio
-        </mat-list-item>
-      </mat-list>
+      <mat-card class="card-box-shadow" (click)="isNotifierOpen = false" [routerLink]="['/chat']">
+        <mat-card-content>Marco rossi ti ha inviato un messagio</mat-card-content>
+      </mat-card>
     </div>
   </div>
   <div class="body-root-app">

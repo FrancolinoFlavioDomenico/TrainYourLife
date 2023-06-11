@@ -22,7 +22,7 @@ export class SubscriptionComponent implements OnInit {
 
   public onRenewClick(): void {
     this._modalServie.open(PagamentiComponent, {
-      width: '80vw',
+      width: '300px',
       height: '450px',
     });
   }
@@ -31,7 +31,7 @@ export class SubscriptionComponent implements OnInit {
       width: '300px',
       height: '50px',
       data: {
-        msgBody: 'Registrazione avvenuta con successo',
+        msgBody: 'Operazione avvenuta con successo',
         isSuccessfulModal: true,
       },
     });

@@ -96,6 +96,7 @@ export class AppComponent implements OnInit {
   }
 
   public onHamburgerMenuClicked() {
+    this.isNotifierOpen = false;
     this.toggleMenu = !this.toggleMenu;
   }
 
@@ -109,16 +110,17 @@ export class AppComponent implements OnInit {
   }
 
   public onNotifierclick(): void {
+    this.toggleMenu = false;
     this.isNotifierOpen = !this.isNotifierOpen;
   }
 
   public onLogOutClick(): void {
     this._modalService
       .open(ConfimModalComponent, {
-        height: '20%',
-        width: '60%',
+        height: '150px',
+        width: '300px',
         data: {
-          msgBody: 'Sicuro di voler uscire',
+          msgBody: 'Sicuro di voler uscire?',
           isSuccessfulModal: false,
         },
       })

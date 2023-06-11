@@ -83,8 +83,8 @@ export class ReservationsComponent implements OnInit, AfterViewInit {
     if (!this.isCoach) {
       this._modalServie
         .open(AddReservationModalComponent, {
-          width: '80vw',
-          height: '45vh',
+          width: '300px',
+          height: '370px',
         })
         .afterClosed()
         .subscribe((res) => {
@@ -106,8 +106,8 @@ export class ReservationsComponent implements OnInit, AfterViewInit {
     if (!this.isCoach) {
       this._modalServie
         .open(AddReservationModalComponent, {
-          width: '80vw',
-          height: '45vh',
+          width: '300px',
+          height: '370px',
           data: {
             date: new Date(),
             course: 'Funzionale',
