@@ -2,6 +2,7 @@ import { UserInfoService } from './../shared/service/user-info.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavigationService } from '../shared/service/navigation.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _userInfoService: UserInfoService,
-    private _router: Router
+    private _router: Router,
+    private _navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -33,5 +35,9 @@ export class LoginComponent implements OnInit {
     );
 
     this._userInfoService.setStorageServiceValue('isLogged', true);
+  }
+
+  public onLogonClick(): void {
+    // this._navigationService.savedRoutes = ['/logon'];
   }
 }

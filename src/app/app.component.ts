@@ -14,6 +14,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { NavigationService } from './shared/service/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -66,11 +67,14 @@ export class AppComponent implements OnInit {
 
   public isNotifierOpen = false;
 
+  public isLoginPage = true;
+
   constructor(
     private _userInfoService: UserInfoService,
     private _router: Router,
     private _modalService: MatDialog,
-    private _listService: ListService
+    private _listService: ListService,
+    private _navigationService: NavigationService
   ) {}
 
   public ngOnInit(): void {
@@ -87,6 +91,8 @@ export class AppComponent implements OnInit {
     this._router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((res) => {
+        this.isLoginPage = (res as NavigationEnd).url.includes('login');
+
         this.titlePage = (res as NavigationEnd).url
           .split('/')[1]
           .replace('/', '')
@@ -134,5 +140,11 @@ export class AppComponent implements OnInit {
           }
         },
       });
+
+    this._navigationService.savedRoutes = ['/login'];
+  }
+
+  public onBackClick() {
+    if (!this.isLoginPage) this._navigationService.getPreviuousPage();
   }
 }

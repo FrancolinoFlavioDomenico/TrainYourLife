@@ -16,7 +16,14 @@ export class NavbarComponent implements OnInit {
 
   constructor(private _userInfoService: UserInfoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._userInfoService.isCoachChangeEvent$.subscribe({
+      next: () =>
+        this._userInfoService.getIsCoach()
+          ? (this.menuItem = menuItemCoach)
+          : (this.menuItem = menuItemClient),
+    });
+  }
 
   onItemClick(clckedItem: string) {
     this.navBarItemClick.emit(clckedItem);

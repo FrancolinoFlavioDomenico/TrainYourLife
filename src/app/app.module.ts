@@ -35,6 +35,7 @@ import { AddExercisesComponent } from './add-exercises/add-exercises.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { ContenteditableValueAccessorDirective } from './shared/directives/contenteditable-value-accessor.directive';
+import { NavigationService } from './shared/service/navigation.service';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ContenteditableValueAccessorDirective } from './shared/directives/conte
     SessionStorageService,
     UserInfoService,
     ListService,
+    NavigationService,
     { provide: MAT_DATE_LOCALE, useValue: 'it-IT' },
   ],
   bootstrap: [AppComponent],
