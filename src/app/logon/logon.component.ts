@@ -30,6 +30,7 @@ export class LogonComponent implements OnInit {
   }
 
   public onSelectUserType(userType: string): void {
+    this.isCoachUser = userType === 'coach';
     this._userInfoService.setStorageServiceValue(
       'isCoach',
       userType === 'coach'

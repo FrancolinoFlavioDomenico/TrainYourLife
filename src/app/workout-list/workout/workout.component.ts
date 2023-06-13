@@ -126,6 +126,9 @@ export class WorkoutComponent implements OnInit {
       this._router.navigate(['/progressi']);
     } else {
       this.exerciseIndex++;
+      this.currentRound = 0;
+      this.currentMaxRoundNumber =
+        this.activeCardExercise[this.exerciseIndex].roundNumber;
       this.currentTimeValue =
         this.activeCardExercise[this.exerciseIndex].workTime;
       this.currentMaxTimeValue =
